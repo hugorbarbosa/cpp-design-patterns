@@ -1,0 +1,26 @@
+# Clang-tidy documentation and available checks detailed here: https://clang.llvm.org/extra/clang-tidy/
+Checks: '-*,
+        bugprone-use-after-move,
+        concurrency-mt-unsafe,
+        cppcoreguidelines-*,
+        google-explicit-constructor,
+        modernize-avoid-c-arrays,
+        modernize-deprecated-headers,
+        modernize-macro-to-enum,
+        modernize-use-emplace,
+        modernize-use-using,
+        performance-implicit-conversion-in-loop,
+        performance-inefficient-algorithm,
+        readability-braces-around-statements,
+        readability-const-return-type,
+        readability-else-after-return,
+        readability-implicit-bool-conversion,
+        readability-inconsistent-declaration-parameter-name,
+        readability-magic-numbers,
+        readability-simplify-boolean-expr,
+        readability-uppercase-literal-suffix'
+CheckOptions:
+WarningsAsErrors: '*'
+HeaderFilterRegex: ''
+FormatStyle: none
+User: user
