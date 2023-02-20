@@ -1,5 +1,7 @@
 # Software design patterns with C++
 
+This is still **work in progress**.
+
 This project describes and implements software design patterns using Modern C++.
 
 ## Table of contents
@@ -16,15 +18,13 @@ This project describes and implements software design patterns using Modern C++.
 
 ## Documentation
 
-Documentation available in the [`docs`](./docs) directory:
+The following documentation is available in the [`docs`](./docs) directory:
 
 - SOLID principles.
 - Unified Modeling Language (UML) basics.
 - Listing and description of software design patterns.
 
 ## Project structure
-
-TODO: Update.
 
 This project is structured in the following directories:
 
