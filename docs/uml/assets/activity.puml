@@ -1,0 +1,25 @@
+@startuml
+
+start
+
+:Step 1;
+
+if (If condition) then (yes)
+    :condition is true;
+else (no)
+    :condition is false;
+endif
+
+:Step 2;
+
+fork
+    :Step 3 (parallel);
+fork again
+    :Step 4 (parallel);
+end fork
+
+:Step 5;
+
+stop
+
+@enduml

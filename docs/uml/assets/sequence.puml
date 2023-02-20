@@ -1,0 +1,40 @@
+@startuml sequence
+
+' Title
+title Sequence diagram example
+
+' Participants
+participant "Participant 1" as participant1
+participant "Participant 2" as participant2
+participant "Participant 3" as participant3
+
+' Sequence
+
+== Separator 1 ==
+
+group Group 1
+participant1 -> participant2 : operation 1
+
+loop each iteration
+    participant2 -> participant2: operation 2
+    note right participant2
+        Note 1
+    end note
+end
+participant2 -> participant1 : operation 3
+end
+
+== Separator 2 ==
+
+group Group 2
+participant1 -> participant2 : operation 4
+    activate participant2
+    participant2 -> participant3: operation 5
+    activate participant3
+    participant3 -> participant2: operation 6
+    destroy participant3
+participant2 --> participant1 : operation 7
+deactivate participant2
+end
+
+@enduml

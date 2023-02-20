@@ -11,9 +11,10 @@
 
 ## Introduction
 
-SOLID is a mnemonic acronym for five design principles, to make the software designs more understandable, maintainable and extendable (flexible). They were conceptualized by Robert C. Martin.
+[SOLID](https://en.wikipedia.org/wiki/SOLID) is a mnemonic acronym for five design principles, to make the software designs more understandable, maintainable and extendable (flexible). They were conceptualized by Robert C. Martin.
 
 The SOLID design principles are:
+
 - **S**ingle-responsibility principle.
 - **O**pen-closed principle.
 - **L**iskov substitution principle.
