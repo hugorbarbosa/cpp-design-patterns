@@ -1,0 +1,11 @@
+@startuml
+
+class A {
+}
+
+class B {
+}
+
+A o-> B
+
+@enduml
