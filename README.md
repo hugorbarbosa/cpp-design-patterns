@@ -1,4 +1,4 @@
-# Software design patterns with C++
+# Software design patterns in C++
 
 This is still **work in progress**.
 
@@ -62,11 +62,10 @@ $ cmake --build . -j 4
 
 ## Running
 
-After compiling the project, an executable file is created for each project with a design pattern, and can be run using the following command (note that the executable may be located in a different directory, depending on the configuration generator):
+After compiling the project, an executable file is created for each design pattern, and can be run using the following command, where `DesignPatternExe` corresponds to the executable file of each design pattern (note that some configuration generators (e.g., Visual Studio) may add a configuration folder (e.g., Debug) in the path, represented with `<config>`):
 
-TODO: Update.
 ```sh
-$ ./src/Debug/<DesignPatternProject>
+$ ./bin/<config>/DesignPatternExe
 ```
 
 ## Doxygen documentation
