@@ -68,11 +68,6 @@ class Context
 public:
     /**
      * @brief Constructor.
-     */
-    Context() = default;
-
-    /**
-     * @brief Constructor.
      *
      * @param strategy Strategy to execute the algorithm.
      */
@@ -98,9 +93,7 @@ public:
      */
     void executeStrategy()
     {
-        if (mStrategy) {
-            mStrategy->execute();
-        }
+        mStrategy->execute();
     }
 
 private:

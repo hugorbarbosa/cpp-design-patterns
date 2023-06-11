@@ -4,6 +4,8 @@ project(Strategy)
 
 # Subdirectories
 add_subdirectory(dynamicBase)
+add_subdirectory(dynamicFunction)
+add_subdirectory(staticTemplate)
 
 # ----------------------------------------------------------------------------
 # Executable
@@ -20,6 +22,8 @@ target_include_directories(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
     PRIVATE CppDesignPatterns::DynamicStrategyBase
+    PRIVATE CppDesignPatterns::DynamicStrategyFunction
+    PRIVATE CppDesignPatterns::StaticStrategy
 )
 
 # Generate executable in a specific directory
