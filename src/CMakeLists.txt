@@ -1,1 +1,1 @@
-# TODO: Source code.
+add_subdirectory(strategy)

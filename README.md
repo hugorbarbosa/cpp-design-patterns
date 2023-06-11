@@ -13,7 +13,6 @@ This project describes and implements software design patterns using Modern C++.
 - [Running](#running)
 - [Doxygen documentation](#doxygen-documentation)
 - [Code formatting](#code-formatting)
-- [Code static analysis](#code-static-analysis)
 - [License](#license)
 
 ## Documentation
@@ -41,7 +40,6 @@ These tools need to be installed on the system:
 - C++ compiler: for software compilation (examples: Microsoft Visual C++, GCC and Clang).
 - [Doxygen](https://doxygen.nl/) (optional): for generation of documentation from source code.
 - [Clang-format](https://clang.llvm.org/docs/ClangFormat.html) (optional): for code formatting.
-- [Clang-tidy](https://clang.llvm.org/extra/clang-tidy/) (optional): for code static analysis.
 
 ## Compilation
 
@@ -89,17 +87,6 @@ $ ./scripts/clang-format-check.sh
 ```
 
 A report file is created in the `build-clang-format` directory.
-
-## Code static analysis
-
-For code static analysis, it is used the [clang-tidy](https://clang.llvm.org/extra/clang-tidy/) tool. The correspondent script can be utilized to analyze the code:
-
-```sh
-$ cd <project-directory>
-$ ./scripts/clang-tidy-check.sh
-```
-
-A report file is created in the `build-clang-tidy` directory.
 
 ## License
 

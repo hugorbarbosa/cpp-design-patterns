@@ -1,0 +1,30 @@
+@startuml Strategy_diagram
+
+class Context {
+    + executeStrategy()
+}
+
+interface IStrategy {
+    + virtual ~IStrategy()
+    + virtual execute() = 0
+}
+
+Context *--> IStrategy
+note left on link
+Using composition
+(also possible using as dependency)
+end note
+
+class ConcreteStrategyA {
+    + execute() override
+}
+
+IStrategy <|.. ConcreteStrategyA
+
+class ConcreteStrategyB {
+    + execute() override
+}
+
+IStrategy <|.. ConcreteStrategyB
+
+@enduml
