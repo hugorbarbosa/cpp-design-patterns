@@ -33,18 +33,13 @@ endif()
 # C++ standard
 set(CMAKE_CXX_STANDARD 20)
 
-# Set compile options for GCC
+# Compiler options
 if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-    set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} -Wall -Werror"
-    )
-endif()
-
-# Set compile options for MSVC
-if (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
-    set(CMAKE_CXX_FLAGS
-        "${CMAKE_CXX_FLAGS} /W4 /WX"
-    )
+    # GCC compiler options
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    # MSVC compiler options
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
 endif()
 
 # Subdirectories

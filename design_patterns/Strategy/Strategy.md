@@ -28,7 +28,7 @@ Cons of the Strategy design pattern:
 
 UML representation of the Strategy design pattern:
 
-![](../../assets/Strategy_diagram.png)
+![](./assets/Strategy_diagram.png)
 
 ## Code example
 
@@ -37,4 +37,4 @@ The Strategy can be applied in different ways:
 - **Dynamic Strategy**: the strategy can be changed dynamically at runtime.
 - **Static Strategy**: the strategy is defined at compile time, as a template parameter, and cannot be changed at runtime.
 
-A code example of the Strategy design pattern is available [here](../../../src/strategy/main.cpp).
+A code example of the Strategy design pattern is available [here](./src/strategy/main.cpp).
