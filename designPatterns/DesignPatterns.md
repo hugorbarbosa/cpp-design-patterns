@@ -14,21 +14,23 @@ A software design pattern is a general reusable solution to a commonly occurring
 
 Software design patterns are formalized best practices that a programmer can use to solve common problems when designing an application or system. Note that using a design pattern doesn't mean necessarily a good design, because inappropriate use of patterns may unnecessarily increase the complexity of a given simple problem.
 
-The software design patterns gained popularity in computer science after the book "Design Patterns: Elements of Reusable Object-Oriented Software" was published in 1994. 23 design patterns were conceptualized in this book, divided into 3 categories:
+The software design patterns gained popularity in computer science after the book "Design Patterns: Elements of Reusable Object-Oriented Software" was published in 1994, by the authors Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. These four authors are often referred to as the Gang of Four (GoF).
 
-- Creational patterns
-- Structural patterns
-- Behavioral patterns
+This book conceptualized 23 design patterns, commonly called the "classic" or the "GoF" design patterns, divided into 3 categories:
 
-There are additional patterns that don't fall strictly under the traditional categories previously mentioned, being listed here in the "Other patterns" category. However, different sources may classify patterns differently, fitting some of these patterns within the existing categories, depending on the perspective of classification.
+- Creational patterns.
+- Structural patterns.
+- Behavioral patterns.
+
+There are additional design patterns that were not collected in the "GoF" book, and they are listed in this guide in the "Other patterns" section.
 
 ## Creational patterns
 
 The Creational patterns offer the capability to create objects based on a required criterion and in a controlled way. This category includes the following patterns:
 
-- [Abstract Factory](./Abstract_Factory/Abstract_Factory.md)
+- [Abstract Factory](./AbstractFactory/AbstractFactory.md)
 - [Builder](./Builder/Builder.md)
-- [Factory Method](./Factory_Method/Factory_Method.md)
+- [Factory Method](./FactoryMethod/FactoryMethod.md)
 - [Prototype](./Prototype/Prototype.md)
 - [Singleton](./Singleton/Singleton.md)
 
@@ -48,7 +50,7 @@ The Structural patterns demonstrate how different classes and objects can be org
 
 The Behavioral patterns are about identifying common communication patterns between objects and realizing these patterns. This category includes the following patterns:
 
-- [Chain of Responsibility](./Chain_of_Responsibility/Chain_of_Responsibility.md)
+- [Chain of Responsibility](./ChainOfResponsibility/ChainOfResponsibility.md)
 - [Command](./Command/Command.md)
 - [Interpreter](./Interpreter/Interpreter.md)
 - [Iterator](./Iterator/Iterator.md)
@@ -57,14 +59,14 @@ The Behavioral patterns are about identifying common communication patterns betw
 - [Observer](./Observer/Observer.md)
 - [State](./State/State.md)
 - [Strategy](./Strategy/Strategy.md)
-- [Template Method](./Template_Method/Template_Method.md)
+- [Template Method](./TemplateMethod/TemplateMethod.md)
 - [Visitor](./Visitor/Visitor.md)
 
 ## Other patterns
 
-The "Other patterns" includes patterns that don't fall strictly under the previous categories. This category includes the following patterns:
+This section includes design patterns that were not described in the "GoF" book, and includes the following patterns:
 
 - [Curiously Recurring Template Pattern (CRTP)](./CRTP/CRTP.md)
-- [External Polymorphism](./External_Polymorphism/External_Polymorphism.md)
-- [Null Object](./Null_Object/Null_Object.md)
-- [Type Erasure](./Type_Erasure/Type_Erasure.md)
+- [External Polymorphism](./ExternalPolymorphism/ExternalPolymorphism.md)
+- [Null Object](./NullObject/NullObject.md)
+- [Type Erasure](./TypeErasure/TypeErasure.md)

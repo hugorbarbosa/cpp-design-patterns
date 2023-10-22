@@ -22,7 +22,10 @@ UML offers the following to visualize a system architecture:
 - How entities interact with others (components and interfaces).
 - External user interface.
 
-UML diagrams are divided into 2 categories: structure diagrams and behavior diagrams.
+UML diagrams are divided into 2 categories:
+
+- Structure diagrams.
+- Behavior diagrams.
 
 ## Structure diagrams
 
@@ -152,3 +155,5 @@ $ java -jar <plantuml.jar> -verbose <file>
 # Or
 $ plantuml -verbose <file>
 ```
+
+The diagrams presented in this guide were built using PlantUML (the code is available in the [`assets`](./assets/) directory).

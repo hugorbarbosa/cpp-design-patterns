@@ -37,7 +37,7 @@ public:
      *
      * @param strategy Strategy to execute the algorithm.
      */
-    void setStrategy(Strategy strategy)
+    void setStrategy(Strategy strategy) noexcept
     {
         mStrategy = std::move(strategy);
     }
@@ -45,7 +45,7 @@ public:
     /**
      * @brief Execute the strategy.
      */
-    void executeStrategy()
+    void executeStrategy() noexcept
     {
         if (mStrategy) {
             mStrategy();

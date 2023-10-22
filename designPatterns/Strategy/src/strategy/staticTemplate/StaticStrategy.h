@@ -20,7 +20,7 @@ public:
     /**
      * @brief Execute algorithm.
      */
-    void execute()
+    void execute() noexcept
     {
         std::cout << "Executing strategy A" << std::endl;
     }
@@ -35,7 +35,7 @@ public:
     /**
      * @brief Execute algorithm.
      */
-    void execute()
+    void execute() noexcept
     {
         std::cout << "Executing strategy B" << std::endl;
     }
@@ -68,7 +68,7 @@ public:
     /**
      * @brief Execute the strategy.
      */
-    void executeStrategy()
+    void executeStrategy() noexcept
     {
         mStrategy.execute();
     }

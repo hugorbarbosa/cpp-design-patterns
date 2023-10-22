@@ -3,11 +3,11 @@
 ## Table of contents
 
 - [Introduction](#introduction)
-- [Single-Responsibility Principle](#single-responsibility-principle)
-- [Open-Closed Principle](#open-closed-principle)
-- [Liskov Substitution Principle](#liskov-substitution-principle)
-- [Interface Segregation Principle](#interface-segregation-principle)
-- [Dependency Inversion Principle](#dependency-inversion-principle)
+- [SRP: The Single Responsibility Principle](#srp-the-single-responsibility-principle)
+- [OCP: The Open-Closed Principle](#ocp-the-open-closed-principle)
+- [LSP: The Liskov Substitution Principle](#lsp-the-liskov-substitution-principle)
+- [ISP: The Interface Segregation Principle](#isp-the-interface-segregation-principle)
+- [DIP: The Dependency Inversion Principle](#dip-the-dependency-inversion-principle)
 
 ## Introduction
 
@@ -15,25 +15,25 @@
 
 The SOLID design principles are:
 
-- **S**ingle-Responsibility Principle (SRP).
-- **O**pen-Closed Principle (OCP).
-- **L**iskov Substitution Principle (LSP).
-- **I**nterface Segregation Principle (ISP).
-- **D**ependency Inversion Principle (DIP).
+- SRP: The Single Responsibility Principle.
+- OCP: The Open-Closed Principle.
+- LSP: The Liskov Substitution Principle.
+- ISP: The Interface Segregation Principle.
+- DIP: The Dependency Inversion Principle.
 
-## Single-Responsibility Principle
+## SRP: The Single Responsibility Principle
 
-The Single-Responsibility Principle (SRP) states that:
+The SRP states that:
 
 > *"A class should have only one reason to change."*
 
 This principle defines a responsibility as a reason to change, and concludes that a class or module should have only one responsibility, and therefore only one reason to be changed. Keeping a class focused on a single concern makes the class more robust and easier to understand, test and change in the future.
 
-## Open-Closed Principle
+## OCP: The Open-Closed Principle
 
-The Open-Closed Principle (OCP) states that:
+The OCP states that:
 
-> *"Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification."*
+> *"Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification."*
 
 This principle defines that we should be able to extend a software entity (open for extension), but the extension should be possible by just adding new code, without modifying the existing code (closed for modification).
 
@@ -41,9 +41,9 @@ It has become popularly redefined to refer to the use of abstract interfaces, wh
 
 The interface specifications are not modified and can be reused through inheritance, so the existing interface is closed to modifications and new implementations must, at a minimum, implement that interface. The main advantage is that an interface adds a level of abstraction which allows loose coupling.
 
-## Liskov Substitution Principle
+## LSP: The Liskov Substitution Principle
 
-The Liskov Substitution Principle (LSP) states that:
+The LSP states that:
 
 > *"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."*
 
@@ -53,9 +53,9 @@ This principle was initially introduced by Barbara Liskov and Jeannette Wing as 
 
 This principle defines that derived classes in a program can be substituted for their base classes without altering any of the desirable properties of that program (e.g. correctness).
 
-## Interface Segregation Principle
+## ISP: The Interface Segregation Principle
 
-The Interface Segregation Principle (ISP) states that:
+The ISP states that:
 
 > *"Clients should not be forced to depend upon interfaces that they do not use."*
 
@@ -63,9 +63,9 @@ This principle defines that no code should be forced to depend on methods it doe
 
 The interface segregation intends to keep a system decoupled and thus easier to refactor, change and redeploy.
 
-## Dependency Inversion Principle
+## DIP: The Dependency Inversion Principle
 
-The Dependency Inversion Principle (DIP) states that:
+The DIP states that:
 
 > *"Depend upon abstractions, not concretions."*
 

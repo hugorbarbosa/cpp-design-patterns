@@ -1,5 +1,6 @@
 # ----------------------------------------------------------------------------
 # Project setup
+# ----------------------------------------------------------------------------
 
 cmake_minimum_required(VERSION 3.16)
 
@@ -10,11 +11,13 @@ project(CppDesignPatterns
 
 # ----------------------------------------------------------------------------
 # Configuration options
+# ----------------------------------------------------------------------------
 
 # No CMake user options available in this project
 
 # ----------------------------------------------------------------------------
 # CMake options
+# ----------------------------------------------------------------------------
 
 # Build type on single-configuration generators (e.g. Makefile generators or Ninja).
 # Set default build type if build type not set.
@@ -24,11 +27,13 @@ endif()
 
 # ----------------------------------------------------------------------------
 # Dependencies
+# ----------------------------------------------------------------------------
 
 # No dependencies needed
 
 # ----------------------------------------------------------------------------
 # Build
+# ----------------------------------------------------------------------------
 
 # C++ standard
 set(CMAKE_CXX_STANDARD 20)
@@ -43,10 +48,12 @@ elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
 endif()
 
 # Subdirectories
-add_subdirectory(src)
+add_subdirectory(designPatterns)
 
 # ----------------------------------------------------------------------------
 # Status
+# ----------------------------------------------------------------------------
+
 message(STATUS)
 message(STATUS "${PROJECT_NAME} configuration:")
 message(STATUS "- CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")

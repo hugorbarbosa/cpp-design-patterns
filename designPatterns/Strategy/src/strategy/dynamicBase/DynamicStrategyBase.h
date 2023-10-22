@@ -27,7 +27,7 @@ public:
     /**
      * @brief Execute algorithm.
      */
-    virtual void execute() = 0;
+    virtual void execute() noexcept = 0;
 };
 
 /**
@@ -39,7 +39,7 @@ public:
     /**
      * @copydoc IStrategy#execute
      */
-    void execute() override
+    void execute() noexcept override
     {
         std::cout << "Executing strategy A" << std::endl;
     }
@@ -54,7 +54,7 @@ public:
     /**
      * @copydoc IStrategy#execute
      */
-    void execute() override
+    void execute() noexcept override
     {
         std::cout << "Executing strategy B" << std::endl;
     }
@@ -82,7 +82,7 @@ public:
      *
      * @param strategy Strategy to execute the algorithm.
      */
-    void setStrategy(std::unique_ptr<IStrategy> strategy)
+    void setStrategy(std::unique_ptr<IStrategy> strategy) noexcept
     {
         assert(strategy != nullptr);
         mStrategy = std::move(strategy);
@@ -91,7 +91,7 @@ public:
     /**
      * @brief Execute the strategy.
      */
-    void executeStrategy()
+    void executeStrategy() noexcept
     {
         mStrategy->execute();
     }
