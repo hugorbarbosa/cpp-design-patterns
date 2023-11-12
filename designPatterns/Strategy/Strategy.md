@@ -18,7 +18,7 @@ Pros of the Strategy design pattern:
 
 Cons of the Strategy design pattern:
 
-- **Increased complexity**: the implementation of Strategy pattern introduces additional classes or function objects, which can increase the complexity of the codebase and make the code harder to understand.
+- **Increased complexity**: the implementation of the Strategy pattern introduces additional classes or function objects, which can increase the complexity of the codebase and make the code harder to understand.
 - **Indirection and overhead**: a strategy can introduce an extra layer of indirection between the client and the algorithm, affecting the system performance, since there is an additional function call or object lookup involved.
 - **Increased memory usage**: the Strategy pattern may require storing strategy objects in memory, which can increase memory usage compared to inline algorithmic implementations.
 - **Single strategy for each algorithm**: a strategy should deal with either a single algorithm or a small group of cohesive functions, to respect the Single Responsibility Principle. If multiple operations need to be extracted, multiple strategies need to be implemented.
@@ -37,4 +37,4 @@ The Strategy can be applied in different ways:
 - **Dynamic Strategy**: the strategy can be changed dynamically at runtime.
 - **Static Strategy**: the strategy is defined at compile time, as a template parameter, and cannot be changed at runtime.
 
-A code example of the Strategy design pattern is available [here](./src/strategy/main.cpp).
+A code example of the Strategy design pattern is available [here](./src/main.cpp).

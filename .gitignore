@@ -2,7 +2,7 @@
 .vscode/
 
 # Build files
-*build*/
+*build*/*
 
 # Prerequisites
 *.d

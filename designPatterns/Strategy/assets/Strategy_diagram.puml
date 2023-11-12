@@ -5,8 +5,7 @@ class Context {
 }
 
 interface IStrategy {
-    + virtual ~IStrategy()
-    + virtual execute() = 0
+    + {abstract} execute()
 }
 
 Context *--> IStrategy
@@ -16,13 +15,13 @@ Using composition
 end note
 
 class ConcreteStrategyA {
-    + execute() override
+    + execute()
 }
 
 IStrategy <|.. ConcreteStrategyA
 
 class ConcreteStrategyB {
-    + execute() override
+    + execute()
 }
 
 IStrategy <|.. ConcreteStrategyB
