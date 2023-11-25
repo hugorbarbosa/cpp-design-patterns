@@ -1,0 +1,31 @@
+@startuml Builder_diagram
+
+class Product {
+}
+
+class Director {
+    + construct() : Product
+    - builder : IBuilder
+}
+
+interface IBuilder {
+    + {abstract} buildPartA()
+    + {abstract} buildPartB()
+    + {abstract} ...()
+    + {abstract} getResult() : Product
+}
+
+Director *-> IBuilder
+
+class ConcreteBuilder {
+    + buildPartA()
+    + buildPartB()
+    + ...()
+    + getResult() : Product
+    - product: Product
+}
+
+IBuilder <|.. ConcreteBuilder
+ConcreteBuilder --> Product
+
+@enduml

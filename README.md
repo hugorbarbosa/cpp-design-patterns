@@ -30,7 +30,7 @@ These tools need to be installed on the system for compilation of this project:
 
 ## Compilation
 
-The following commands can be utilized to configure the project (example for Debug configuration):
+The following commands can be utilized to configure the project (example for the Debug build type):
 
 ```sh
 $ cd <project-directory>
@@ -59,6 +59,6 @@ Licensed under the [MIT license](./LICENSE).
 
 ## References
 
-- "C++ Software Design: Design Principles and Patterns for High-Quality Software", by Klaus Iglberger.
-- "Design Patterns in Modern C++20: Reusable Approaches for Object-Oriented Software Design", by Dmitri Nesteruk.
-- "Clean Architecture: A Craftsman's Guide to Software Structure and Design", by Robert C. Martin.
+- Klaus Iglberger, *C++ Software Design: Design Principles and Patterns for High-Quality Software*.
+- Dmitri Nesteruk, *Design Patterns in Modern C++20: Reusable Approaches for Object-Oriented Software Design*.
+- Robert C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and Design*.
