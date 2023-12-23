@@ -7,7 +7,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 void Product::setPartA(Part part) noexcept
 {
@@ -25,6 +24,5 @@ std::string Product::getInfo() const noexcept
     return info;
 }
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns

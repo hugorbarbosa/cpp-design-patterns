@@ -7,7 +7,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 // Forward declaration.
 class Product;
@@ -39,6 +38,5 @@ public:
     virtual Product getResult() const noexcept = 0;
 };
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns

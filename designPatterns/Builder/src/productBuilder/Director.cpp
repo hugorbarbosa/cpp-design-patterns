@@ -8,7 +8,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 Director::Director(std::unique_ptr<IProductBuilder> builder)
     : mProductBuilder{std::move(builder)}
@@ -25,6 +24,5 @@ Product Director::construct() noexcept
     return mProductBuilder->getResult();
 }
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns

@@ -1,0 +1,27 @@
+@startuml FactoryMethod_diagram
+
+interface IProduct {
+}
+
+class ConcreteProduct {
+}
+
+IProduct <|.. ConcreteProduct
+
+interface ICreator {
+    + {abstract} factoryMethod() : IProduct
+}
+
+ICreator --> IProduct
+
+class ConcreteCreator {
+    + factoryMethod() : IProduct
+}
+
+ICreator <|.. ConcreteCreator
+ConcreteCreator ..> ConcreteProduct
+note bottom on link
+Create product
+end note
+
+@enduml
