@@ -1,9 +1,8 @@
-project(Product)
+project(ProductFactoryMethod)
 
 add_library(${PROJECT_NAME} STATIC
-    Product.cpp
-    ConcreteProductBuilder.cpp
-    Director.cpp
+    ConcreteProduct.cpp
+    ConcreteCreator.cpp
 )
 add_library(CppDesignPatterns::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 

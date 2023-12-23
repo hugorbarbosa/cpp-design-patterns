@@ -16,7 +16,7 @@ int main()
 {
     std::cout << "== Builder ====" << std::endl;
 
-    using namespace cppDesignPatterns::builder::product;
+    using namespace cppDesignPatterns::builder;
 
     Director director(std::make_unique<ConcreteProductBuilder>());
     auto product = director.construct();

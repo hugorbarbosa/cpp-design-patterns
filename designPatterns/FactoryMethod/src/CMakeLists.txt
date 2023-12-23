@@ -1,13 +1,13 @@
-project(Builder)
+project(FactoryMethod)
 
-add_subdirectory(productBuilder)
+add_subdirectory(productFactoryMethod)
 
 add_executable(${PROJECT_NAME}
     main.cpp
 )
 
 target_link_libraries(${PROJECT_NAME}
-    PRIVATE CppDesignPatterns::ProductBuilder
+    PRIVATE CppDesignPatterns::ProductFactoryMethod
 )
 
 # Generate executable in a specific directory

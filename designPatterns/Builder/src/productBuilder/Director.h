@@ -11,7 +11,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 /**
  * @brief Director of the product.
@@ -39,6 +38,5 @@ private:
     std::unique_ptr<IProductBuilder> mProductBuilder;
 };
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns

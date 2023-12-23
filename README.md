@@ -47,9 +47,10 @@ $ cmake --build . -j 4
 
 ## Running
 
-After compiling the project, an executable file is created for each design pattern, and can be run using the following command, where `<DesignPatternExe>` corresponds to the executable file of each design pattern (note that some configuration generators (e.g., Visual Studio) may add a configuration folder (e.g., Debug) in the path, represented with `[config]` in the command):
+After compiling the project, an executable file is created for each design pattern, and can be run using the following command, where `<DesignPatternExe>` corresponds to the executable file of each design pattern, e.g., `Strategy` (note that some configuration generators (e.g., Visual Studio) may add a configuration folder (e.g., Debug) in the path, represented with `[config]` in the command):
 
 ```sh
+$ cd build
 $ ./bin/[config]/<DesignPatternExe>
 ```
 

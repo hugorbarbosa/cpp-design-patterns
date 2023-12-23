@@ -9,7 +9,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 /**
  * @brief Product that is created by the builder.
@@ -48,6 +47,5 @@ private:
     Part mPartB{};
 };
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns

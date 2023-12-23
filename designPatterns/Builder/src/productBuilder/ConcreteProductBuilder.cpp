@@ -7,7 +7,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 void ConcreteProductBuilder::buildPartA() noexcept
 {
@@ -24,6 +23,5 @@ Product ConcreteProductBuilder::getResult() const noexcept
     return mProduct;
 }
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns

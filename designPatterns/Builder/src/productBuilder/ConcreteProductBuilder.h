@@ -10,7 +10,6 @@
 
 namespace cppDesignPatterns {
 namespace builder {
-namespace product {
 
 /**
  * @brief Concrete product builder.
@@ -37,6 +36,5 @@ private:
     Product mProduct;
 };
 
-} // namespace product
 } // namespace builder
 } // namespace cppDesignPatterns
