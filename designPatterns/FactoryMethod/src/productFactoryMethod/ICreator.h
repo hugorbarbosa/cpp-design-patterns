@@ -26,6 +26,8 @@ public:
      * @brief Create product.
      *
      * This method represents the factory method that creates the product.
+     *
+     * @return Created product.
      */
     virtual std::unique_ptr<IProduct> createProduct() const noexcept = 0;
 };

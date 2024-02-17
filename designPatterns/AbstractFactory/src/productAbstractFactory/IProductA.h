@@ -23,6 +23,8 @@ public:
 
     /**
      * @brief Get the product A information.
+     *
+     * @return Product information.
      */
     virtual std::string getInfo() const noexcept = 0;
 };
