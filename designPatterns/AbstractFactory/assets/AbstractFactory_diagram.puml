@@ -1,0 +1,44 @@
+@startuml AbstractFactory_diagram
+
+interface IProductA {
+}
+
+class ConcreteProductA1 {
+}
+
+IProductA <|.. ConcreteProductA1
+
+interface IProductB {
+}
+
+class ConcreteProductB1 {
+}
+
+IProductB <|.. ConcreteProductB1
+
+interface IAbstractFactory {
+    + {abstract} createProductA() : IProductA
+    + {abstract} createProductB() : IProductB
+}
+
+IAbstractFactory --> IProductA
+IAbstractFactory --> IProductB
+
+class ConcreteFactory1 {
+    + createProductA() : IProductA
+    + createProductB() : IProductB
+}
+
+IAbstractFactory <|.. ConcreteFactory1
+ConcreteFactory1 ..> ConcreteProductA1
+note bottom on link
+Create
+product A1
+end note
+ConcreteFactory1 ..> ConcreteProductB1
+note bottom on link
+Create
+product B1
+end note
+
+@enduml

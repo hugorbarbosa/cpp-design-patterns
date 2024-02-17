@@ -4,11 +4,15 @@
  */
 
 #include <algorithm>
-#include <DynamicStrategyBase.h>
-#include <DynamicStrategyFunction.h>
+#include <dynamicBase/ConcreteStrategyA.h>
+#include <dynamicBase/ConcreteStrategyB.h>
+#include <dynamicBase/Context.h>
+#include <dynamicFunction/Context.h>
 #include <iostream>
 #include <memory>
-#include <StaticStrategy.h>
+#include <staticTemplate/ConcreteStrategyA.h>
+#include <staticTemplate/ConcreteStrategyB.h>
+#include <staticTemplate/Context.h>
 
 /**
  * @brief Example of dynamic strategy using a base class.

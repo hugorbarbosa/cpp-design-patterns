@@ -22,17 +22,5 @@ public:
     std::unique_ptr<IProduct> createProduct() const noexcept override;
 };
 
-/**
- * @brief Concrete product creator B.
- */
-class ConcreteCreatorB : public ICreator
-{
-public:
-    /**
-     * @copydoc ICreator#createProduct
-     */
-    std::unique_ptr<IProduct> createProduct() const noexcept override;
-};
-
 } // namespace factoryMethod
 } // namespace cppDesignPatterns

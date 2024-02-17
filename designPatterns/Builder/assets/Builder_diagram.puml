@@ -16,6 +16,7 @@ interface IBuilder {
 }
 
 Director *-> IBuilder
+Director --> Product
 
 class ConcreteBuilder {
     + buildPartA()

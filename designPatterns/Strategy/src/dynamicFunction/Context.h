@@ -5,9 +5,7 @@
 
 #pragma once
 
-#include <cassert>
 #include <functional>
-#include <iostream>
 
 namespace cppDesignPatterns {
 namespace strategy {
@@ -27,30 +25,19 @@ public:
      *
      * @param strategy Strategy to execute the algorithm.
      */
-    explicit Context(Strategy strategy)
-        : mStrategy{std::move(strategy)}
-    {
-    }
+    explicit Context(Strategy strategy);
 
     /**
      * @brief Set the strategy.
      *
      * @param strategy Strategy to execute the algorithm.
      */
-    void setStrategy(Strategy strategy) noexcept
-    {
-        mStrategy = std::move(strategy);
-    }
+    void setStrategy(Strategy strategy) noexcept;
 
     /**
      * @brief Execute the strategy.
      */
-    void executeStrategy() noexcept
-    {
-        if (mStrategy) {
-            mStrategy();
-        }
-    }
+    void executeStrategy() noexcept;
 
 private:
     /// Strategy to execute the algorithm.

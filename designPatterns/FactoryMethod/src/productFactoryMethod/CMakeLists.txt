@@ -1,8 +1,10 @@
 project(ProductFactoryMethod)
 
 add_library(${PROJECT_NAME} STATIC
-    ConcreteProduct.cpp
-    ConcreteCreator.cpp
+    ConcreteProductA.cpp
+    ConcreteCreatorA.cpp
+    ConcreteProductB.cpp
+    ConcreteCreatorB.cpp
 )
 add_library(CppDesignPatterns::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 

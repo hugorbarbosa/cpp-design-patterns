@@ -1,3 +1,4 @@
+add_subdirectory(AbstractFactory)
 add_subdirectory(Builder)
 add_subdirectory(FactoryMethod)
 add_subdirectory(Strategy)

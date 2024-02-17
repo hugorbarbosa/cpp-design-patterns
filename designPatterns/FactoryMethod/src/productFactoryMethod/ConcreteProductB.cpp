@@ -3,15 +3,10 @@
  * @copyright Copyright (c) 2023.
  */
 
-#include "ConcreteProduct.h"
+#include "ConcreteProductB.h"
 
 namespace cppDesignPatterns {
 namespace factoryMethod {
-
-std::string ConcreteProductA::getInfo() const noexcept
-{
-    return "Concrete product A";
-}
 
 std::string ConcreteProductB::getInfo() const noexcept
 {

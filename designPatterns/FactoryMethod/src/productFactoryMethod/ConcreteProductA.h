@@ -22,17 +22,5 @@ public:
     std::string getInfo() const noexcept override;
 };
 
-/**
- * @brief Concrete product B.
- */
-class ConcreteProductB : public IProduct
-{
-public:
-    /**
-     * @copydoc IProduct#getInfo
-     */
-    std::string getInfo() const noexcept override;
-};
-
 } // namespace factoryMethod
 } // namespace cppDesignPatterns
