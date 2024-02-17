@@ -1,0 +1,25 @@
+@startuml Prototype_diagram
+
+interface IPrototype {
+    + {abstract} clone() : IPrototype
+}
+
+class ConcretePrototype1 {
+    + clone() : IPrototype
+}
+
+IPrototype <|.. ConcretePrototype1
+
+class ConcretePrototype2 {
+    + clone() : IPrototype
+}
+
+IPrototype <|.. ConcretePrototype2
+
+
+class Client {
+}
+
+Client -> IPrototype : Clone prototype
+
+@enduml

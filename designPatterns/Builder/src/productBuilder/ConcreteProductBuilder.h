@@ -33,6 +33,7 @@ public:
     Product getResult() const noexcept override;
 
 private:
+    /// Product.
     Product mProduct;
 };
 

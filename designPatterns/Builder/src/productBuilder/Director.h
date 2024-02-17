@@ -35,6 +35,7 @@ public:
     Product construct() noexcept;
 
 private:
+    /// Product builder.
     std::unique_ptr<IProductBuilder> mProductBuilder;
 };
 

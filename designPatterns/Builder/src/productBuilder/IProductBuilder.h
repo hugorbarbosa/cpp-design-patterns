@@ -34,6 +34,8 @@ public:
 
     /**
      * @brief Get the built product.
+     *
+     * @return Built product.
      */
     virtual Product getResult() const noexcept = 0;
 };

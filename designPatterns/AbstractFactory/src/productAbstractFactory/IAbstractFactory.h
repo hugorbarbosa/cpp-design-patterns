@@ -25,11 +25,15 @@ public:
 
     /**
      * @brief Create product A.
+     *
+     * @return Created product.
      */
     virtual std::unique_ptr<IProductA> createProductA() const noexcept = 0;
 
     /**
      * @brief Create product B.
+     *
+     * @return Created product.
      */
     virtual std::unique_ptr<IProductB> createProductB() const noexcept = 0;
 };
