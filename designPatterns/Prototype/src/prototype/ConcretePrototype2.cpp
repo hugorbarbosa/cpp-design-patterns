@@ -15,7 +15,7 @@ ConcretePrototype2::ConcretePrototype2(std::string data)
 
 std::unique_ptr<IPrototype> ConcretePrototype2::clone() const
 {
-    // Copy construct this concrete prototype
+    // Copy construct this concrete prototype.
     return std::make_unique<ConcretePrototype2>(*this);
 }
 
