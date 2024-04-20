@@ -1,0 +1,15 @@
+@startuml Singleton_diagram
+
+class Singleton {
+    + static instance() : Singleton
+    - Singleton()
+    + operation()
+    - static uniqueInstance : Singleton
+}
+
+class Client {
+}
+
+Client -> Singleton : Access to the Singleton from the **instance()** method
+
+@enduml
