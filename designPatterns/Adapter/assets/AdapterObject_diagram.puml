@@ -1,0 +1,26 @@
+@startuml AdapterObject_diagram
+
+title "Object Adapter"
+
+interface ITarget {
+    + {abstract} operation()
+}
+
+class Adaptee {
+    + specificOperation()
+}
+
+class Adapter {
+    + operation()
+    - adaptee : Adaptee
+}
+
+ITarget <|.. Adapter
+Adaptee <-- Adapter
+
+class Client {
+}
+
+Client -> ITarget
+
+@enduml
