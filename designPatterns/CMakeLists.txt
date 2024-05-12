@@ -1,5 +1,6 @@
 add_subdirectory(AbstractFactory)
 add_subdirectory(Adapter)
+add_subdirectory(Bridge)
 add_subdirectory(Builder)
 add_subdirectory(FactoryMethod)
 add_subdirectory(Prototype)

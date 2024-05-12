@@ -6,6 +6,11 @@ The intent of the Strategy design pattern is:
 
 - Define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy allows the algorithm to vary independently from the clients that use it.
 
+The Strategy can be applied in different ways:
+
+- **Dynamic Strategy**: the strategy can be changed dynamically at runtime.
+- **Static Strategy**: the strategy is defined at compile time, as a template parameter, and cannot be changed at runtime.
+
 ## Pros and Cons
 
 Pros of the Strategy design pattern:
@@ -31,10 +36,5 @@ UML representation of the Strategy design pattern:
 ![](./assets/Strategy_diagram.png)
 
 ## Code example
-
-The Strategy can be applied in different ways:
-
-- **Dynamic Strategy**: the strategy can be changed dynamically at runtime.
-- **Static Strategy**: the strategy is defined at compile time, as a template parameter, and cannot be changed at runtime.
 
 A code example of the Strategy design pattern is available [here](./src/main.cpp).
