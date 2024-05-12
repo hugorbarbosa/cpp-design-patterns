@@ -17,9 +17,9 @@ This project describes and implements software design patterns using Modern C++.
 
 This project is structured as follows:
 
-- [SOLID principles](./solid): description of the SOLID design principles.
-- [Unified Modeling Language (UML) basics](./uml): brief presentation of the UML language and examples of UML diagrams.
-- [Design patterns](./designPatterns): presentation of the classic and other software design patterns, as well as examples implemented in C++.
+- [SOLID principles](./solid/SOLID_principles.md): description of the SOLID design principles.
+- [Design patterns](./designPatterns/DesignPatterns.md): presentation of the classic and other software design patterns, as well as examples implemented in C++.
+- [Unified Modeling Language (UML) basics](./uml/UML_basics.md): brief presentation of the UML language and examples of UML diagrams.
 
 ## Requirements
 

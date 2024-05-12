@@ -40,4 +40,4 @@ UML representation of the Adapter design pattern:
 
 ## Code example
 
-A code example of the Singleton design pattern is available [here](./src/main.cpp).
+A code example of the Adapter design pattern is available [here](./src/main.cpp).

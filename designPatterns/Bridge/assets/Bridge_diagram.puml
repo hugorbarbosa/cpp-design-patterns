@@ -1,0 +1,26 @@
+@startuml Bridge_diagram
+
+interface Abstraction {
+    + {abstract} operation()
+    - impl : IImplementor
+}
+
+class RefinedAbstraction {
+    + operation()
+}
+
+Abstraction <|-- RefinedAbstraction
+
+interface IImplementor {
+    + {abstract} operationImpl()
+}
+
+Abstraction o-> IImplementor
+
+class ConcreteImplementor {
+    + operationImpl()
+}
+
+IImplementor <|.. ConcreteImplementor
+
+@enduml
