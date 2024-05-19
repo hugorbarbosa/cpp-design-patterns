@@ -14,6 +14,19 @@ The following are the key components contained in the Composite design pattern:
 - **Leaf**: implements the Component interface, and represents leaf objects in the composition.
 - **Composite**: implements the Component interface, and represents a composite component (having children).
 
+## UML diagram
+
+UML representation of the Composite design pattern:
+
+![](./assets/CompositeUniformity_diagram.png)
+
+![](./assets/CompositeTypeSafety_diagram.png)
+
+The Composite design pattern has two design variants for defining child-related operations:
+
+- *Design for uniformity*: child-related operations are defined in the Component interface. This allows clients to treat Leaf and Composite objects uniformly, however child-related operations can be performed on Leaf objects.
+- *Design for type safety*: child-related operations are defined only in the Composite class. In this case, clients treat Leaf and Composite objects differently, since child-related operations cannot be performed on Leaf objects.
+
 ## Pros and Cons
 
 Pros of the Composite design pattern:
@@ -27,19 +40,6 @@ Cons of the Composite design pattern:
 
 - **Overhead**: it can introduce additional complexity and overhead if not used carefully, especially in simple scenarios where a composite structure might be overkill. Traversal and management of the composite structure might incur performance costs.
 - **Potential for excessive generality**: since all objects need to implement a common interface, it may result in the creation of methods that are not relevant to all classes.
-
-## UML diagram
-
-UML representation of the Composite design pattern:
-
-![](./assets/CompositeUniformity_diagram.png)
-
-![](./assets/CompositeTypeSafety_diagram.png)
-
-The Composite design pattern has two design variants for defining child-related operations:
-
-- *Design for uniformity*: child-related operations are defined in the Component interface. This allows clients to treat Leaf and Composite objects uniformly, however child-related operations can be performed on Leaf objects.
-- *Design for type safety*: child-related operations are defined only in the Composite class. In this case, clients treat Leaf and Composite objects differently, since child-related operations cannot be performed on Leaf objects.
 
 ## Code example
 

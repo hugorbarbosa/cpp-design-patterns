@@ -14,6 +14,12 @@ The Abstract Factory and Factory Method design patterns are both creational patt
 | Products | Families of related or dependent products, ensuring that the created objects are compatible with each other, as they belong to the same family. | Primarily deals with a single product, usually standalone, and there is no inherent requirement that the created products must be compatible or belong to a family. |
 | Usage | Suitable when there are multiple families of related or dependent products, and the system needs to be configured to use one family at a time. | Suitable when a class cannot anticipate the class of objects it is required to create, or when a class wants its subclasses to specify the objects it creates. |
 
+## UML diagram
+
+UML representation of the Abstract Factory design pattern:
+
+![](./assets/AbstractFactory_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Abstract Factory design pattern:
@@ -26,12 +32,6 @@ Cons of the Abstract Factory design pattern:
 
 - **Complexity**: the pattern can introduce a level of complexity, especially when dealing with a large number of product types and variations.
 - **Maintenance overhead**: adding new product variants or families may require modifying the existing abstract factory interface and all of its implementations, which can result in maintenance overhead.
-
-## UML diagram
-
-UML representation of the Abstract Factory design pattern:
-
-![](./assets/AbstractFactory_diagram.png)
 
 ## Code example
 

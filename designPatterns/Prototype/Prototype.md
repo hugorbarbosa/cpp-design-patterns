@@ -8,6 +8,12 @@ The intent of the Prototype design pattern is:
 
 The Prototype pattern is used to create new objects based on existing objects through cloning. It is implemented by creating a prototype interface or base class that defines a method for cloning itself (commonly named as `clone`), and derived classes provide the actual cloning functionality.
 
+## UML diagram
+
+UML representation of the Prototype design pattern:
+
+![](./assets/Prototype_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Prototype design pattern:
@@ -22,12 +28,6 @@ Cons of the Prototype design pattern:
 - **Performance**: the performance has a negative impact with the indirection due to pointers. The prototype pattern is implemented, very often, by dynamic memory, and the allocation and the possible resulting fragmented memory affect the performance.
 - **Complexity**: if the object being cloned has complex dependencies or requires deep copying, implementing the clone method can be complex.
 - **Dynamic typing overhead**: depending on the implementation, dynamic typing overhead might be introduced if the prototype needs to be cast to a specific type after cloning.
-
-## UML diagram
-
-UML representation of the Prototype design pattern:
-
-![](./assets/Prototype_diagram.png)
 
 ## Code example
 

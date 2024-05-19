@@ -8,6 +8,12 @@ The intent of the Builder design pattern is:
 
 The Builder pattern is useful when an object needs to be constructed with different configurations, and the construction process is complex or involves many steps, being often used in the building of objects composed of other objects.
 
+## UML diagram
+
+UML representation of the Builder design pattern:
+
+![](./assets/Builder_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Builder design pattern:
@@ -20,12 +26,6 @@ Cons of the Builder design pattern:
 
 - **Increased complexity**: the implementation of the Builder pattern often introduces additional classes or function objects, which can increase the complexity of the codebase and make the code harder to understand.
 - **Limited use for simple objects**: for simple objects that don't require a complex construction process, direct construction or other creational patterns may be more appropriate.
-
-## UML diagram
-
-UML representation of the Builder design pattern:
-
-![](./assets/Builder_diagram.png)
 
 ## Code example
 

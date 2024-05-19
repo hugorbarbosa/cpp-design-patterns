@@ -10,6 +10,12 @@ The Factory Method pattern uses factory methods to deal with the problem of crea
 
 See the [Abstract Factory](../AbstractFactory/AbstractFactory.md) pattern to verify the key differences between the Factory Method and the Abstract Factory.
 
+## UML diagram
+
+UML representation of the Factory Method design pattern:
+
+![](./assets/FactoryMethod_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Factory Method design pattern:
@@ -23,12 +29,6 @@ Cons of the Factory Method design pattern:
 
 - **Complexity**: the number of classes in a design can increase with the introduction of the Factory Method pattern, which might increase its complexity.
 - **Abstraction overhead**: the introduction of an additional level of abstraction might be unnecessary for simpler scenarios.
-
-## UML diagram
-
-UML representation of the Factory Method design pattern:
-
-![](./assets/FactoryMethod_diagram.png)
 
 ## Code example
 

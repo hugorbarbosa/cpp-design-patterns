@@ -6,6 +6,12 @@ The intent of the Observer design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Observer design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Observer design pattern:
@@ -15,12 +21,6 @@ Pros of the Observer design pattern:
 Cons of the Observer design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Observer design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

@@ -6,6 +6,12 @@ The intent of the Facade design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Facade design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Facade design pattern:
@@ -15,12 +21,6 @@ Pros of the Facade design pattern:
 Cons of the Facade design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Facade design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

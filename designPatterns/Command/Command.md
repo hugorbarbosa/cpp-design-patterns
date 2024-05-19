@@ -6,6 +6,12 @@ The intent of the Command design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Command design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Command design pattern:
@@ -15,12 +21,6 @@ Pros of the Command design pattern:
 Cons of the Command design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Command design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

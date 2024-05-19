@@ -11,6 +11,12 @@ The Strategy can be applied in different ways:
 - **Dynamic Strategy**: the strategy can be changed dynamically at runtime.
 - **Static Strategy**: the strategy is defined at compile time, as a template parameter, and cannot be changed at runtime.
 
+## UML diagram
+
+UML representation of the Strategy design pattern:
+
+![](./assets/Strategy_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Strategy design pattern:
@@ -28,12 +34,6 @@ Cons of the Strategy design pattern:
 - **Increased memory usage**: the Strategy pattern may require storing strategy objects in memory, which can increase memory usage compared to inline algorithmic implementations.
 - **Single strategy for each algorithm**: a strategy should deal with either a single algorithm or a small group of cohesive functions, to respect the Single Responsibility Principle. If multiple operations need to be extracted, multiple strategies need to be implemented.
 - **Potential overengineering**: the Strategy pattern can lead to an overly complex design if not used judiciously. It's important to apply the pattern only when necessary and when there is a clear need for interchangeable algorithms, keeping things as simple as possible (KISS principle - Keep It Simple, Stupid).
-
-## UML diagram
-
-UML representation of the Strategy design pattern:
-
-![](./assets/Strategy_diagram.png)
 
 ## Code example
 

@@ -16,6 +16,14 @@ Adapter can be applied in different ways:
 - Class Adapter: inherits from the wrapped type, using multiple inheritance.
 - Function Adapter: uses functions to adapt an interface. For example, the free `begin()` and `end()` functions available in the Standard Library have the purpose of adapting the iterator interface of any type to the expected STL iterator interface.
 
+## UML diagram
+
+UML representation of the Adapter design pattern:
+
+![](./assets/AdapterObject_diagram.png)
+
+![](./assets/AdapterClass_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Adapter design pattern:
@@ -29,14 +37,6 @@ Cons of the Adapter design pattern:
 - **Easy to disrespect the LSP**: adapter makes it very easy to combine things that do not belong together, so it is important to consider the expected behavior and to check for LSP expectations when applying an adapter.
 - **Overhead**: the usage of adapter may introduce overhead in terms of performance and memory consumption, although this is typically negligible.
 - **Maintenance**: as the system evolves, maintaining adapters to keep them synchronized with the evolving interfaces can be a challenge.
-
-## UML diagram
-
-UML representation of the Adapter design pattern:
-
-![](./assets/AdapterObject_diagram.png)
-
-![](./assets/AdapterClass_diagram.png)
 
 ## Code example
 

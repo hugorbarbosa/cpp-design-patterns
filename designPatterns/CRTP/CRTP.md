@@ -6,6 +6,12 @@ The intent of the CRTP design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the CRTP design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the CRTP design pattern:
@@ -15,12 +21,6 @@ Pros of the CRTP design pattern:
 Cons of the CRTP design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the CRTP design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 
