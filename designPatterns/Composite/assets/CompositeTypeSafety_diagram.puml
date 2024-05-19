@@ -1,0 +1,31 @@
+@startuml CompositeTypeSafety_diagram
+
+title "Composite (type safety)"
+
+class client {
+}
+
+interface Component {
+    + {abstract} operation()
+}
+
+client -> Component
+
+class Leaf {
+    + operation()
+}
+
+Component <|-- Leaf
+
+class Composite {
+    + operation()
+    + add()
+    + remove()
+    + getChild() : Component
+}
+
+Component <|-- Composite
+Component <-[hidden]- Composite
+Component "0..* " --o Composite
+
+@enduml

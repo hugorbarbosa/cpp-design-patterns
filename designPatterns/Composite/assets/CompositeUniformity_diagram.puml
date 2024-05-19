@@ -1,0 +1,34 @@
+@startuml CompositeUniformity_diagram
+
+title "Composite (uniformity)"
+
+class client {
+}
+
+interface Component {
+    + {abstract} operation()
+    + add()
+    + remove()
+    + getChild() : Component
+}
+
+client -> Component
+
+class Leaf {
+    + operation()
+}
+
+Component <|-- Leaf
+
+class Composite {
+    + operation()
+    + add()
+    + remove()
+    + getChild() : Component
+}
+
+Component <|-- Composite
+Component <-[hidden]- Composite
+Component "0..* " --o Composite
+
+@enduml
