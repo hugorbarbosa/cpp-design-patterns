@@ -6,6 +6,12 @@ The intent of the Mediator design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Mediator design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Mediator design pattern:
@@ -15,12 +21,6 @@ Pros of the Mediator design pattern:
 Cons of the Mediator design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Mediator design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

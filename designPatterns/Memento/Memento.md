@@ -6,6 +6,12 @@ The intent of the Memento design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Memento design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Memento design pattern:
@@ -15,12 +21,6 @@ Pros of the Memento design pattern:
 Cons of the Memento design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Memento design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

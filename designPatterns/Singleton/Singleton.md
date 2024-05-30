@@ -10,6 +10,12 @@ The Singleton pattern is used when we want to guarantee that there is only one i
 
 Although the Singleton pattern is considered as a design pattern, it doesn't introduce an abstraction and isn't concerned with the reduction of the dependencies between the different entities in the software. Therefore, Singleton can be considered more of an implementation pattern than a design pattern.
 
+## UML diagram
+
+UML representation of the Singleton design pattern:
+
+![](./assets/Singleton_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Singleton design pattern:
@@ -23,12 +29,6 @@ Cons of the Singleton design pattern:
 - **Global state**: introduces global state which can make it difficult to track dependencies and debug code.
 - **Testing complexity**: the unit testing becomes more difficult, as Singletons can introduce hidden dependencies.
 - **Tight coupling**: can lead to tight coupling between classes, making the code less flexible (harder to change) and harder to maintain.
-
-## UML diagram
-
-UML representation of the Singleton design pattern:
-
-![](./assets/Singleton_diagram.png)
 
 ## Code example
 

@@ -20,6 +20,12 @@ The Bridge pattern can be applied in different ways:
 - **Using polymorphism**: this way uses a base class (abstraction) and has the previously mentioned key components (full bridge). It utilizes a pointer data member (pointer-to-implementation) that is an opaque pointer that represents a bridge to the encapsulated implementation details.
 - **Using the Pimpl idiom**: although this ways also uses a pointer-to-implementation, it applies a nonpolymorphic form of Bridge, coming with all the decoupling benefits of the full bridge, however, despite its simplicity, it may result in a more complex implementation of the class.
 
+## UML diagram
+
+UML representation of the Bridge design pattern:
+
+![](./assets/Bridge_diagram.png)
+
 ## Pros and Cons
 
 Pros of the Bridge design pattern:
@@ -32,12 +38,6 @@ Cons of the Bridge design pattern:
 
 - **Overhead with additional indirection**: the pimpl pointer introduces a performance penalty. However, implementing a partial bridge may have a very positive impact effect on performance (it depends on the use case).
 - **Complexity**: it can introduce complexity, especially for simpler scenarios, resulting in additional classes and interfaces.
-
-## UML diagram
-
-UML representation of the Bridge design pattern:
-
-![](./assets/Bridge_diagram.png)
 
 ## Code example
 

@@ -1,0 +1,39 @@
+@startuml Decorator_diagram
+
+class client {
+}
+
+interface Component {
+    + {abstract} operation()
+}
+
+client -> Component
+
+class ConcreteComponent {
+    + operation()
+}
+
+Component <|-- ConcreteComponent
+
+class Decorator {
+    + operation()
+    - component : Component
+}
+
+Component <|-- Decorator
+
+class ConcreteDecorator1 {
+    + operation()
+    + addFunction()
+}
+
+Decorator <|-- ConcreteDecorator1
+
+class ConcreteDecorator2 {
+    + operation()
+    + addFunction()
+}
+
+Decorator <|-- ConcreteDecorator2
+
+@enduml

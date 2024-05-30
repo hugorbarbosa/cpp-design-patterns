@@ -6,6 +6,12 @@ The intent of the Chain of Responsibility design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Chain of Responsibility design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Chain of Responsibility design pattern:
@@ -15,12 +21,6 @@ Pros of the Chain of Responsibility design pattern:
 Cons of the Chain of Responsibility design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Chain of Responsibility design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

@@ -6,6 +6,12 @@ The intent of the Flyweight design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Flyweight design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Flyweight design pattern:
@@ -15,12 +21,6 @@ Pros of the Flyweight design pattern:
 Cons of the Flyweight design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Flyweight design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 

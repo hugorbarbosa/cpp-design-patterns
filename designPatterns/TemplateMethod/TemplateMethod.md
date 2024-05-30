@@ -6,6 +6,12 @@ The intent of the Template Method design pattern is:
 
 - TODO: Intent.
 
+## UML diagram
+
+UML representation of the Template Method design pattern:
+
+TODO: Add UML diagram.
+
 ## Pros and Cons
 
 Pros of the Template Method design pattern:
@@ -15,12 +21,6 @@ Pros of the Template Method design pattern:
 Cons of the Template Method design pattern:
 
 - TODO: Cons.
-
-## UML diagram
-
-UML representation of the Template Method design pattern:
-
-TODO: Add UML diagram.
 
 ## Code example
 
