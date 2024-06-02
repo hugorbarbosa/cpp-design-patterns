@@ -2,7 +2,7 @@
 
 title "Composite (uniformity)"
 
-class client {
+class Client {
 }
 
 interface Component {
@@ -12,7 +12,7 @@ interface Component {
     + getChild() : Component
 }
 
-client -> Component
+Client -> Component
 
 class Leaf {
     + operation()
