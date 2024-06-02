@@ -2,14 +2,14 @@
 
 title "Composite (type safety)"
 
-class client {
+class Client {
 }
 
 interface Component {
     + {abstract} operation()
 }
 
-client -> Component
+Client -> Component
 
 class Leaf {
     + operation()

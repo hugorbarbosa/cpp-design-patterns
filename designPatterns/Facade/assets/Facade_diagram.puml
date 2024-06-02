@@ -1,0 +1,26 @@
+@startuml Facade_diagram
+
+class Client {
+}
+
+class Facade {
+    + operation1()
+    + operation2()
+    - subsystemA : SubsystemA
+    - subsystemB : SubsystemB
+}
+
+Client -> Facade
+
+class SubsystemA {
+    + operation()
+}
+
+class SubsystemB {
+    + operation()
+}
+
+SubsystemA <--* Facade
+SubsystemB <--* Facade
+
+@enduml

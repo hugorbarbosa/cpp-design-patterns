@@ -1,13 +1,13 @@
 @startuml Decorator_diagram
 
-class client {
+class Client {
 }
 
 interface Component {
     + {abstract} operation()
 }
 
-client -> Component
+Client -> Component
 
 class ConcreteComponent {
     + operation()
