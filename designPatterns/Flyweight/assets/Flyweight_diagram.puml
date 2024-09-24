@@ -1,0 +1,31 @@
+@startuml Flyweight_diagram
+
+class Client {
+}
+
+class Flyweight {
+    + operation(extrinsicState)
+    - intrinsicState
+}
+
+class FlyweightFactory {
+    + getFlyweight(intrinsicState) : Flyweight
+    - cache : Flyweight[]
+}
+
+Flyweight <--o FlyweightFactory
+
+class Context {
+    + Context(intrinsicState, extrinsicState)
+    + operation()
+    - extrinsicState
+    - flyweight : Flyweight
+    - flyweightFactory : FlyweightFactory
+}
+
+Flyweight <--o Context
+FlyweightFactory <-- Context
+
+Client *-> Context
+
+@enduml
