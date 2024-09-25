@@ -1,11 +1,18 @@
 @startuml
 
-class A {
+abstract AbstractClass {
+    + {abstract} abstractMethod()
+    + method()
+    + publicMember
+    # protectedMember
+    - privateMember1
 }
 
-class B {
+class ConcreteClass {
+    + abstractMethod()
+    - privateMember2
 }
 
-A <|- B
+AbstractClass <|-- ConcreteClass
 
 @enduml

@@ -1,0 +1,14 @@
+@startuml
+
+class Class {
+    + publicMethod(parameter : int) : int
+    - privateMethod()
+    # protectedMethod()
+    ~ packageMethod()
+    + publicMember : int
+    - privateMember
+    # protectedMember
+    ~ packageMember
+}
+
+@enduml

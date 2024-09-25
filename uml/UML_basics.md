@@ -12,9 +12,7 @@
 
 ## Introduction
 
-The [Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language) (UML) is a general-purpose, developmental modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system.
-
-UML offers the following to visualize a system architecture:
+The [Unified Modeling Language](https://en.wikipedia.org/wiki/Unified_Modeling_Language) (UML) is a general-purpose, developmental modeling language in the field of software engineering that is intended to provide a standard way to visualize the design of a system. UML offers the following to visualize a system architecture:
 
 - Activities (jobs).
 - Individual components of the system, and how they can interact with other software components.
@@ -62,40 +60,51 @@ To specify the visibility of a class member (i.e. any attribute or method), thes
 | `#` | Protected |
 | `~` | Package |
 
+Notation example generated using PlantUML (see [Tools](#tools)):
+
+![](./assets/visibility.png)
+
 #### Class relationships
 
 A relationship is a general term covering the specific types of logical connections found on class and object diagrams. UML defines the following relationships:
 
-- Association (*knows*): one element knows the other.
-- Dependency (*uses*): it exists between two elements if changes to the definition of one element (the server or target) may cause changes to the other (the client or source).
-- Aggregation (*has*): represents a part-whole or part-of relationship. When the container is destroyed, the contents are not usually destroyed (e.g., *shared pointer* to a container in a class).
-- Composition (*has*): stronger form of aggregation. When the container is destroyed, the contents are also destroyed (e.g., *unique pointer* to a container in a class).
-- Inheritance (*extends*): a class is derived from another class.
-- Realization (*implements*): a class implements an interface.
+**Association**
 
-Notation for a class diagram example of **association**:
+An *Association* (*knows*) represents a relationship where one element knows the other.
 
 ![](./assets/association.png)
 
-Notation for a class diagram example of **dependency**:
+**Dependency**
+
+A *Dependency* (*uses*) represents a relationship that exists between two elements if changes to the definition of one element may cause changes to the other.
 
 ![](./assets/dependency.png)
 
-Notation for a class diagram example of **aggregation**:
+**Aggregation**
+
+An *Aggregation* (*has*) represents a part-whole or part-of relationship. It can occur when a class is a collection or container of other classes, but the contained classes do not have a strong lifecycle dependency on the container. The contents of the container still exist when the container is destroyed, so it doesn't have ownership of the contained class (e.g., *shared/weak pointer* to the contained class, `std::vector<std::shared_ptr<Class>>`).
 
 ![](./assets/aggregation.png)
 
-Notation for a class diagram example of **composition**:
+**Composition**
+
+A *Composition* (*has*) represents a stronger form of the aggregation relationship, where the aggregate controls the lifecycle of the elements it aggregates. When the container is destroyed, the contents are also destroyed (e.g., *unique pointer* to the contained class, `std::vector<std::unique_ptr<Class>>`).
 
 ![](./assets/composition.png)
 
-Notation for a class diagram example of **inheritance**:
+**Inheritance**
+
+An *Inheritance* (*extends*) represents a relationship where one of the two related classes (known as subclass, child or derived class) is considered to be a specialized form of the other (known as superclass, parent or base class), being the superclass considered a generalization of the subclass.
 
 ![](./assets/inheritance.png)
 
-Notation for a class diagram example of **realization**:
+**Realization**
+
+A *Realization* (*implements*) represents a relationship between two elements, in which one of them (the client) implements/realizes the behavior that the other class (the supplier/interface) specifies.
 
 ![](./assets/realization.png)
+
+**Multiplicity**
 
 UML allows the specification of the multiplicity in a relation (the range of number of objects that participate), as follows:
 
@@ -107,6 +116,10 @@ UML allows the specification of the multiplicity in a relation (the range of num
 | 1..1 | Exactly one instance |
 | 0..* | Zero or more instances |
 | 1..* | One or more instances |
+
+The example below demonstrates a multiplicity relation: a university owns many departments, and each department has a number of professors. If the university closes, the departments will no longer exist (composition), but the professors in those departments will continue to exist (aggregation). It is worth to also mention that a professor can work in more than one department, but a department can not be part of more than one university.
+
+![](./assets/multiplicity.png)
 
 ## Behavior diagrams
 
@@ -152,7 +165,7 @@ This tool can be used from the command line to generate an image from a file, as
 
 ```sh
 $ java -jar <plantuml.jar> -verbose <file>
-# Or
+$ # Or
 $ plantuml -verbose <file>
 ```
 

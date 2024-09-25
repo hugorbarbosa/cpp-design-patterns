@@ -1,11 +1,17 @@
 @startuml
 
-class A {
+interface InterfaceClass {
+    + {abstract} virtualMethod()
 }
 
-class B {
+note right of InterfaceClass::virtualMethod
+    virtual void virtualMethod() = 0;
+end note
+
+class ConcreteClass {
+    + virtualMethod()
 }
 
-A <|.. B
+InterfaceClass <|.. ConcreteClass
 
 @enduml
