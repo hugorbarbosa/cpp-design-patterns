@@ -60,6 +60,7 @@ Licensed under the [MIT license](./LICENSE).
 
 ## References
 
-- Klaus Iglberger, *C++ Software Design: Design Principles and Patterns for High-Quality Software*.
-- Dmitri Nesteruk, *Design Patterns in Modern C++20: Reusable Approaches for Object-Oriented Software Design*.
-- Robert C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and Design*.
+- Klaus Iglberger, *C++ Software Design: Design Principles and Patterns for High-Quality Software*, O'Reilly Media, 1st ed., 2022.
+- Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides, *Design Patterns: Elements of Reusable Object-Oriented Software*, Addison-Wesley Professional, 1st ed., 1994.
+- Dmitri Nesteruk, *Design Patterns in Modern C++20: Reusable Approaches for Object-Oriented Software Design*, Apress, 2nd ed., 2021.
+- Robert C. Martin, *Clean Architecture: A Craftsman's Guide to Software Structure and Design*, Pearson, 1st ed., 2017.

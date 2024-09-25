@@ -1,0 +1,27 @@
+@startuml
+
+left to right direction
+
+class University {
+    - departments : list<Department>
+}
+
+class Department {
+    - professors : list<Professor>
+}
+
+class Professor {
+}
+
+University "1" *-- "0..10" Department : composition
+Department "0..*" o-- "0..5" Professor : aggregation
+
+note "University owns\nmany departments" as N1
+University .. N1
+N1 .. Department
+
+note "Department has a\nnumber of professors" as N2
+Department .. N2
+N2 .. Professor
+
+@enduml

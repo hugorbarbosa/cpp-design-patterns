@@ -4,7 +4,7 @@ start
 
 :Step 1;
 
-if (If condition) then (yes)
+if (condition is true?) then (yes)
     :condition is true;
 else (no)
     :condition is false;
@@ -19,6 +19,24 @@ fork again
 end fork
 
 :Step 5;
+
+switch (case?)
+case (case 1)
+    : Case 1;
+case (case 2)
+    : Case 2;
+endswitch
+
+while (condition?) is (yes)
+    :Step 6;
+backward :Check again;
+endwhile (no)
+
+repeat :Step 7;
+    :Step 8;
+backward :Repeat;
+repeat while (done ?) is (no)
+->yes;
 
 stop
 
