@@ -21,11 +21,13 @@ The SOLID design principles are:
 - ISP: The Interface Segregation Principle.
 - DIP: The Dependency Inversion Principle.
 
+Note that the SOLID principles are tools for better maintainability and changeability, but are not goals. It can be counterproductive to separate all entities and structure the code only to follow the SOLID principles, so software developers need to design the software to have high quality but they should pay attention to not overengineering the project.
+
 ## SRP: The Single Responsibility Principle
 
 The SRP states that:
 
-> *"A class should have only one reason to change."*
+> "A class should have only one reason to change."
 
 This principle defines a responsibility as a reason to change, and concludes that a class or module should have only one responsibility, and therefore only one reason to be changed. Keeping a class focused on a single concern makes the class more robust and easier to understand, test and change in the future.
 
@@ -33,7 +35,7 @@ This principle defines a responsibility as a reason to change, and concludes tha
 
 The OCP states that:
 
-> *"Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification."*
+> "Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification."
 
 This principle defines that we should be able to extend a software entity (open for extension), but the extension should be possible by just adding new code, without modifying the existing code (closed for modification).
 
@@ -45,7 +47,7 @@ The interface specifications are not modified and can be reused through inherita
 
 The LSP states that:
 
-> *"Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."*
+> "Functions that use pointers or references to base classes must be able to use objects of derived classes without knowing it."
 
 This principle was initially introduced by Barbara Liskov and Jeannette Wing as follows:
 
@@ -57,7 +59,7 @@ This principle defines that derived classes in a program can be substituted for 
 
 The ISP states that:
 
-> *"Clients should not be forced to depend upon interfaces that they do not use."*
+> "Clients should not be forced to depend upon interfaces that they do not use."
 
 This principle defines that no code should be forced to depend on methods it does not use, which means that larger interfaces should be split into smaller and more specific ones. With this, clients (derived classes) only need to know the methods that are of interest to them. Additional functionality should not be added to an existing interface by adding new methods; instead, a new interface should be created, and a class can implement multiple interfaces if needed.
 
@@ -67,7 +69,7 @@ The interface segregation intends to keep a system decoupled and thus easier to 
 
 The DIP states that:
 
-> *"Depend upon abstractions, not concretions."*
+> "Depend upon abstractions, not concretions."
 
 This principle defines that the high-level modules must not depend on the low-level modules, but they should depend on abstractions. It is a specific methodology for loosely coupling software modules, and consists of the following:
 
