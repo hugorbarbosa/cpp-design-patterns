@@ -37,7 +37,7 @@ participant1 -> participant2 : operation 1
 loop each iteration
     participant2 -> participant2: operation 2
     note right participant2
-        Note right Participant 2
+        Note on right of Participant 2
     end note
 end
 participant2 -> participant1 : operation 3
