@@ -1,4 +1,4 @@
-# SOLID principles
+# SOLID Principles
 
 ## Table of contents
 

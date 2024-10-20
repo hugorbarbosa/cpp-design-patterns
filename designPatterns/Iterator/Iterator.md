@@ -4,7 +4,7 @@
 
 The intent of the Iterator design pattern is:
 
-- TODO: Intent.
+- Provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
 
 ## UML diagram
 

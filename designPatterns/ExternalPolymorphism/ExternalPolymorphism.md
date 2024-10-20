@@ -4,7 +4,7 @@
 
 The intent of the External Polymorphism design pattern is:
 
-- TODO: Intent.
+- Allow classes unrelated by inheritance and/or having no virtual methods to be treated polymorphically. These unrelated classes can be treated in a common manner by software that uses them.
 
 ## UML diagram
 

@@ -4,7 +4,7 @@
 
 The intent of the State design pattern is:
 
-- TODO: Intent.
+- Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
 
 ## UML diagram
 

@@ -4,7 +4,7 @@
 
 The intent of the CRTP design pattern is:
 
-- TODO: Intent.
+- Define a compile-time abstraction for a family of related types.
 
 ## UML diagram
 

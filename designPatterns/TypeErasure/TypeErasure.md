@@ -4,7 +4,7 @@
 
 The intent of the Type Erasure design pattern is:
 
-- TODO: Intent.
+- Provide a value-based, non-intrusive abstraction for an extendable set of unrelated, potentially non-polymorphic types with the same semantic behavior.
 
 ## UML diagram
 
