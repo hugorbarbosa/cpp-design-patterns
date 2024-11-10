@@ -4,7 +4,7 @@
 
 The intent of the Command design pattern is:
 
-- TODO: Intent.
+- Encapsule a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
 
 ## UML diagram
 

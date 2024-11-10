@@ -1,6 +1,6 @@
-# Software design: SOLID principles and design patterns in C++
+# Software Design: SOLID Principles and Design Patterns in C++
 
-This project includes my study related to the topic of Software Design, particularly the importance of software design for the quality of a project, the SOLID design principles and the classics and other design patterns. Design pattern implementation examples are also available in this project using Modern C++.
+This project includes my study related to the topic of Software Design, particularly the importance of software design for the quality of a project, the SOLID design principles and software design patterns. Design pattern implementation examples are also available in this project using Modern C++.
 
 ## Table of contents
 
@@ -18,17 +18,17 @@ This project includes my study related to the topic of Software Design, particul
 
 ### Introduction
 
-Software can be defined as a set of instructions, namely computer programs, that controls what a computer does, performing operations and specific tasks. Developing software is a process that comprises several stages: software design, programming (coding), testing, release and maintenance.
+Software can be defined as a set of instructions, a program that controls what a computer does, performing operations and specific tasks. Developing software is a process that comprises several stages: software design, programming (coding), testing, release and maintenance.
 
 To develop a computer program and make it work, a high level of knowledge or experience is not necessary. Students who are starting programming studies at schools/universities can easily get a program up and running. The produced code may not be the best or most correct, but it works. Well, everything works perfectly right now, as long as nothing changes and until the moment when new features need to be added.
 
-"**Soft**ware", as the name implies, must be ***soft***, which means that it must be easy to change and extend, and that is the expectation for any software project. That's why it is called *software* in comparison to hardware, which is difficult to change. Indeed, one constant in software development is **change**, therefore it is expected that software is easily adapted to the ever-changing requirements. However, in reality, this expectation is often difficult to achieve.
+"**Soft**ware", as the name implies, must be ***soft***, which means that it must be easy to change and extend, and that is the expectation for any software project. That's why it is called *software* in comparison to *hardware*, which is difficult to change. Indeed, one constant in software development is **change**, therefore it is expected that software is easily adapted to the ever-changing requirements. However, in reality, this expectation is often difficult to achieve.
 
 ### Software design
 
 High-quality software is software that is easy to **change**, easy to **extend**, and easy to **test**. But, developing high-quality software is hard, very hard. The design of the software should be able to solve the current problem but also general enough to address future problems and requirements. It is also important to avoid redesign, or at least minimize it, but a reusable and flexible design is difficult to get it right the first time. Therefore, it is important to know the answer to the following question:
 
-> What is the core problem of adaptable software and software development in general?
+***What is the core problem of adaptable software and software development in general?***
 
 The answer to that question is: **Dependencies**. Using a sentence stated by Kent Beck:
 
@@ -36,7 +36,7 @@ The answer to that question is: **Dependencies**. Using a sentence stated by Ken
 
 This formulation is so true. Indeed, the problem is always about dealing with the connections and relationships between classes and modules. In software, different pieces of code need to work together, and this interaction can create some form of coupling. These artificial dependencies make software harder to change, read, test, and maintain. Thus, the software must be developed in a way that keeps these artificial dependencies at a minimum. But,
 
-> How to break these dependencies?
+***How to break these dependencies?***
 
 The answer is: **Software design**. As Robert C. Martin stated:
 
@@ -54,24 +54,30 @@ While the C++ language features and new standards are important, since they prov
 
 Software design is essential and can be considered the foundation of the success of a software project, so it matters from the very beginning of the project, and it is a continuous effort. Therefore, every software developer should pay attention to the structure of the code and keep in mind the following:
 
-> Keep the code easy to **change**, easy to **extend**, and easy to **test**.
+**Keep the code easy to *change*, easy to *extend*, and easy to *test*.**
 
 Actually, after all, good software is low-cost since it is easy to change and maintain, but bad software is expensive, since more time is required to add new features and can also lead to code refactors which delays the release of those features.
 
-So, another question arises now:
+The figure below shows the curve of the productivity over time in a typical software project (source: Klaus Iglberger, *Breaking Dependencies: The Path to High-Quality Software*, Meeting C++ 2022, see [References](#references)).
 
-> How can we keep the software easy to change, extend and test?
+![](./docs/assets/software-project-productivity.png)
+
+It is possible to conclude that when the project starts, the productivity of the developers is nearly 100%, but after it drops over time. This is very frustrating for the developers, because everyone is working hard on the project. Despite all their dedication, they can't get the same work done that they were getting before, for the reason that their efforts are now consumed in managing the mess that the software has become, to be able to add one more small new feature to the project. Sometimes, developers think that they can clean up the software later, that it is more important to get to market first. Writing messy code may allow software to be released faster, but it will only slow down developers in the long run, since the code will never be cleaned up later because there is always market pressure. Thus, designing good, clean and well structured software is extremely important, quality of code really matters.
+
+To achieve that, the following question now arises:
+
+***How can we keep the software easy to change, extend and test?***
 
 The answer to the question is: **SOLID principles** and **Design patterns**.
 
-This project addresses both of these topics. See [Project Structure](#project-structure) for more details.
+This project addresses both of these topics. See [Project structure](#project-structure) for more details.
 
 ## Project structure
 
 This project is structured as follows:
 
 - [SOLID principles](./solid/SOLID_principles.md): description of the SOLID design principles.
-- [Design patterns](./designPatterns/DesignPatterns.md): presentation of the classic and other software design patterns, as well as examples implemented in C++.
+- [Design patterns](./designPatterns/DesignPatterns.md): presentation of software design patterns, as well as examples implemented in C++.
 - [Unified Modeling Language (UML) basics](./uml/UML_basics.md): brief introduction to the UML language and examples of UML diagrams.
 
 ## Requirements

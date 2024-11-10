@@ -4,7 +4,7 @@
 
 The intent of the Interpreter design pattern is:
 
-- TODO: Intent.
+- Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 
 ## UML diagram
 
