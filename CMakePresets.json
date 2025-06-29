@@ -1,0 +1,242 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "displayName": "Default",
+            "description": "Default configuration",
+            "binaryDir": "${sourceDir}/build-${presetName}",
+            "hidden": true
+        },
+        {
+            "name": "debug",
+            "displayName": "Debug",
+            "description": "Debug build type configuration",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug"
+            },
+            "hidden": true
+        },
+        {
+            "name": "release",
+            "displayName": "Release",
+            "description": "Release build type configuration",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            },
+            "hidden": true
+        },
+        {
+            "name": "msvc",
+            "displayName": "MSVC",
+            "description": "Configuration using the MSVC compiler",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_CXX_COMPILER": "cl"
+            },
+            "hidden": true
+        },
+        {
+            "name": "gcc",
+            "displayName": "GCC",
+            "description": "Configuration using the GCC compiler",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            },
+            "hidden": true
+        },
+        {
+            "name": "clang",
+            "displayName": "Clang",
+            "description": "Configuration using the clang compiler",
+            "inherits": "default",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            },
+            "hidden": true
+        },
+        {
+            "name": "debug-msvc",
+            "displayName": "Debug with MSVC",
+            "description": "Debug build type configuration using the MSVC compiler",
+            "inherits": [
+                "debug",
+                "msvc"
+            ]
+        },
+        {
+            "name": "debug-gcc",
+            "displayName": "Debug with GCC",
+            "description": "Debug build type configuration using the GCC compiler",
+            "inherits": [
+                "debug",
+                "gcc"
+            ]
+        },
+        {
+            "name": "debug-clang",
+            "displayName": "Debug with Clang",
+            "description": "Debug build type configuration using the clang compiler",
+            "inherits": [
+                "debug",
+                "clang"
+            ]
+        },
+        {
+            "name": "release-msvc",
+            "displayName": "Release with MSVC",
+            "description": "Release build type configuration using the MSVC compiler",
+            "inherits": [
+                "release",
+                "msvc"
+            ]
+        },
+        {
+            "name": "release-gcc",
+            "displayName": "Release with GCC",
+            "description": "Release build type configuration using the GCC compiler",
+            "inherits": [
+                "release",
+                "gcc"
+            ]
+        },
+        {
+            "name": "release-clang",
+            "displayName": "Release with Clang",
+            "description": "Release build type configuration using the clang compiler",
+            "inherits": [
+                "release",
+                "clang"
+            ]
+        },
+        {
+            "name": "clang-format",
+            "displayName": "Clang-format",
+            "description": "Clang-format configuration",
+            "inherits": "debug",
+            "cacheVariables": {
+                "CPPDPAT_ENABLE_CLANG_FORMAT": "ON"
+            }
+        },
+        {
+            "name": "clang-tidy",
+            "displayName": "Clang-tidy",
+            "description": "Clang-tidy configuration",
+            "inherits": "debug-clang",
+            "cacheVariables": {
+                "CPPDPAT_ENABLE_CLANG_TIDY": "ON"
+            }
+        },
+        {
+            "name": "doxygen",
+            "displayName": "Doxygen",
+            "description": "Doxygen configuration",
+            "inherits": "debug",
+            "cacheVariables": {
+                "CPPDPAT_ENABLE_DOXYGEN": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "displayName": "Default",
+            "description": "Default build",
+            "hidden": true
+        },
+        {
+            "name": "default-parallel",
+            "displayName": "Default parallel",
+            "description": "Default build with concurrent processes",
+            "jobs": 4,
+            "hidden": true
+        },
+        {
+            "name": "debug-msvc",
+            "displayName": "Debug with MSVC",
+            "description": "Debug build using the MSVC compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "debug-msvc"
+        },
+        {
+            "name": "debug-gcc",
+            "displayName": "Debug with GCC",
+            "description": "Debug build using the GCC compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "debug-gcc"
+        },
+        {
+            "name": "debug-clang",
+            "displayName": "Debug with Clang",
+            "description": "Debug build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "debug-clang"
+        },
+        {
+            "name": "release-msvc",
+            "displayName": "Release with MSVC",
+            "description": "Release build using the MSVC compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "release-msvc"
+        },
+        {
+            "name": "release-gcc",
+            "displayName": "Release with GCC",
+            "description": "Release build using the GCC compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "release-gcc"
+        },
+        {
+            "name": "release-clang",
+            "displayName": "Release with Clang",
+            "description": "Release build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "release-clang"
+        },
+        {
+            "name": "clang-format",
+            "displayName": "Clang-format",
+            "description": "Clang-format build target",
+            "inherits": "default",
+            "configurePreset": "clang-format",
+            "targets": "clang_format"
+        },
+        {
+            "name": "clang-tidy",
+            "displayName": "Clang-tidy",
+            "description": "Clang-tidy build target",
+            "inherits": "default",
+            "configurePreset": "clang-tidy",
+            "targets": "clang_tidy"
+        },
+        {
+            "name": "doxygen",
+            "displayName": "Doxygen",
+            "description": "Doxygen build target",
+            "inherits": "default",
+            "configurePreset": "doxygen",
+            "targets": "doxygen"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "default",
+            "displayName": "Default",
+            "description": "Default configuration",
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": false
+            },
+            "hidden": true
+        }
+    ]
+}

@@ -8,9 +8,7 @@ Design pattern implementation examples are also available in this project using 
 
 - [Motivation](#motivation)
 - [Project structure](#project-structure)
-- [Requirements](#requirements)
-- [Compilation](#compilation)
-- [Running](#running)
+- [Building](#building)
 - [License](#license)
 - [References](#references)
 
@@ -56,43 +54,16 @@ This project addresses both of these topics.
 
 This project is structured as follows:
 
-- [SOLID principles](./solid/SOLID_principles.md): description of the SOLID design principles.
-- [Design patterns](./designPatterns/DesignPatterns.md): presentation of software design patterns, as well as examples implemented in C++.
+- [SOLID principles](./solid/solid-principles.md): description of the SOLID design principles.
+- [Design patterns](./design-patterns/design-patterns.md): presentation of software design patterns, as well as examples implemented in C++.
 
 **Note:** This project uses UML diagrams. For more details about UML, please consult this [guide](https://github.com/hugorbarbosa/tutorials/blob/main/uml-basics/uml-basics.md).
 
-## Requirements
+## Building
 
-These tools need to be installed on the system for compilation of this project:
+This project uses CMake as its build system, with support for CMake Presets to simplify configuration and building.
 
-- CMake: system to manage the build process.
-- C++ compiler: for software compilation (examples: Microsoft Visual C++ (MSVC), GCC and Clang).
-
-## Compilation
-
-The following commands can be utilized to configure the project (example for the Debug build type):
-
-```sh
-$ cd <project-directory>
-$ mkdir build
-$ cd build
-$ cmake .. -DCMAKE_BUILD_TYPE=Debug
-```
-
-To compile the software, use the CMake build command:
-
-```sh
-$ cmake --build . -j 4
-```
-
-## Running
-
-After compiling the project, an executable file is created for each design pattern, and can be run using the following command, where `<DesignPatternExe>` corresponds to the executable file name of each design pattern, e.g., `Strategy` (note that some configuration generators (e.g., Visual Studio) might create a folder with the configuration utilized (e.g., Debug) where the binary file will be placed, represented with `[config]` in the command):
-
-```sh
-$ cd build
-$ ./bin/[config]/<DesignPatternExe>
-```
+For detailed build instructions, including how to build the project, run examples, enable optional code quality tools (code format, static analysis, etc) and generate documentation, please see the [Building guide](BUILDING.md).
 
 ## License
 

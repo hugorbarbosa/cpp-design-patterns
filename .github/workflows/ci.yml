@@ -1,0 +1,93 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+      - release/*
+  pull_request:
+    branches:
+      - develop
+      - main
+      - release/*
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        compiler: [gcc, clang, msvc]
+        preset_build_type : [debug, release]
+        include:
+          - os: ubuntu-latest
+            compiler: gcc
+          - os: ubuntu-latest
+            compiler: clang
+          - os: windows-latest
+            compiler: msvc
+        exclude:
+          - os: ubuntu-latest
+            compiler: msvc
+          - os: windows-latest
+            compiler: gcc
+          - os: windows-latest
+            compiler: clang
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Configure project
+      run: cmake --preset ${{ matrix.preset_build_type }}-${{ matrix.compiler }}
+
+    - name: Build project
+      run: cmake --build --preset ${{ matrix.preset_build_type }}-${{ matrix.compiler }}
+
+  clang_format:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Configure project
+      run: cmake --preset clang-format
+
+    - name: Build project and check code formatting with clang-format
+      run: cmake --build --preset clang-format
+
+  clang_tidy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Configure project
+      run: cmake --preset clang-tidy
+
+    - name: Build project and run code static analysis with clang-tidy
+      run: cmake --build --preset clang-tidy
+
+  doxygen:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Install requirements
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y doxygen
+
+    - name: Configure project
+      run: cmake --preset doxygen
+
+    - name: Build project and run doxygen
+      run: cmake --build --preset doxygen

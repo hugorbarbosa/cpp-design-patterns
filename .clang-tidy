@@ -1,0 +1,36 @@
+# For more details regarding clang-tidy checks, please
+# consult https://clang.llvm.org/extra/clang-tidy/.
+
+---
+Checks: '-*,
+        bugprone-*,
+        concurrency-*,
+        cppcoreguidelines-*,
+        google-build-explicit-make-pair,
+        google-build-namespaces,
+        google-build-using-namespace,
+        google-default-arguments,
+        google-explicit-constructor,
+        google-global-names-in-headers,
+        google-readability-avoid-underscore-in-googletest-name,
+        google-readability-casting,
+        google-upgrade-googletest-case,
+        hicpp-*,
+        misc-const-correctness,
+        misc-header-include-cycle,
+        misc-no-recursion,
+        misc-redundant-expression,
+        misc-static-assert,
+        modernize-*,
+        -modernize-concat-nested-namespaces,
+        -modernize-use-nodiscard,
+        -modernize-use-trailing-return-type,
+        performance-*,
+        readability-*,
+        -readability-avoid-const-params-in-decls,
+        -readability-identifier-length'
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
+FormatStyle: none
+InheritParentConfig: true
+User: user
