@@ -2,8 +2,6 @@
 
 This guide contains instructions for building and running the Docker image of this project.
 
-For more information about the Docker tool and used commands, see this [Docker guide](https://github.com/hugorbarbosa/tutorials/blob/main/docker-guide/docker-guide.md).
-
 ## Table of contents
 
 - [Build image](#build-image)

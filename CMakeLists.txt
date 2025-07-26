@@ -79,7 +79,7 @@ set_project_default_compiler_options(
 if(CPPDPAT_ENABLE_CLANG_FORMAT)
     include(ClangFormat)
     set(CLANG_FORMAT_DIRECTORIES
-        "${CMAKE_CURRENT_SOURCE_DIR}/design-patterns"
+        "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns"
     )
     set(CLANG_FORMAT_LOG_FILE "clang-format-report.log")
     enable_clang_format_check("${CLANG_FORMAT_DIRECTORIES}" ${CLANG_FORMAT_LOG_FILE})
@@ -88,7 +88,7 @@ endif()
 if(CPPDPAT_ENABLE_CLANG_TIDY)
     include(ClangTidy)
     set(CLANG_TIDY_DIRECTORIES
-        "${CMAKE_CURRENT_SOURCE_DIR}/design-patterns"
+        "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns"
     )
     set(CLANG_TIDY_LOG_FILE "clang-tidy-report.log")
     enable_clang_tidy("${CLANG_TIDY_DIRECTORIES}" ${CLANG_TIDY_LOG_FILE})
@@ -101,7 +101,7 @@ if(CPPDPAT_ENABLE_DOXYGEN)
     set(DOXYGEN_VERSION ${CPPDPAT_PROJECT_VERSION})
     set(DOXYGEN_BRIEF "Design patterns using Modern C++")
     set(DOXYGEN_INPUT_LIST
-        "${CMAKE_CURRENT_SOURCE_DIR}/design-patterns"
+        "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns"
     )
     string(REPLACE ";" " " DOXYGEN_INPUT "${DOXYGEN_INPUT_LIST}")
     set(DOXYGEN_OUT_DIR "${CMAKE_BINARY_DIR}/doxygen")
@@ -121,7 +121,7 @@ endif()
 # Build
 # ----------------------------------------------------------------------------
 include(ProjectUtils)
-add_subdirectory(design-patterns)
+add_subdirectory(design_patterns)
 
 # ----------------------------------------------------------------------------
 # Configuration report

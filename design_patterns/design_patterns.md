@@ -38,9 +38,9 @@ There are additional design patterns that were not collected in the "GoF" book, 
 
 The Creational patterns offer the capability to create objects based on a required criterion and in a controlled way. This category includes the following patterns and intents:
 
-- [Abstract Factory](./abstract-factory/abstract-factory.md): provide an interface for creating *families* of related or dependent objects without specifying their concrete classes.
+- [Abstract Factory](./abstract_factory/abstract_factory.md): provide an interface for creating *families* of related or dependent objects without specifying their concrete classes.
 - [Builder](./builder/builder.md): separate the construction of a complex object from its representation, allowing the same construction process to create different representations.
-- [Factory Method](./factory-method/factory-method.md): define an interface for creating a *single* object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+- [Factory Method](./factory_method/factory_method.md): define an interface for creating a *single* object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
 - [Prototype](./prototype/prototype.md): specify the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.
 - [Singleton](./singleton/singleton.md): ensure a class has only one instance, and provide a global point of access to it.
 
@@ -60,7 +60,7 @@ The Structural patterns demonstrate how different classes and objects can be org
 
 The Behavioral patterns are about identifying common communication patterns between objects and realizing these patterns. This category includes the following patterns:
 
-- [Chain of Responsibility](./chain-of-responsibility/chain-of-responsibility.md): avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
+- [Chain of Responsibility](./chain_of_responsibility/chain_of_responsibility.md): avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 - [Command](./command/command.md): encapsule a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
 - [Interpreter](./interpreter/interpreter.md): given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 - [Iterator](./iterator/iterator.md): provide a way to access the elements of an aggregate object sequentially without exposing its underlying representation.
@@ -69,7 +69,7 @@ The Behavioral patterns are about identifying common communication patterns betw
 - [Observer](./observer/observer.md): define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 - [State](./state/state.md): allow an object to alter its behavior when its internal state changes. The object will appear to change its class.
 - [Strategy](./strategy/strategy.md): define a family of algorithms, encapsulate each one, and make them interchangeable. Strategy allows the algorithm to vary independently from the clients that use it.
-- [Template Method](./template-method/template-method.md): define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
+- [Template Method](./template_method/template_method.md): define the skeleton of an algorithm in an operation, deferring some steps to subclasses. Template Method lets subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 - [Visitor](./visitor/visitor.md): represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
 
 ### Other patterns
@@ -77,5 +77,5 @@ The Behavioral patterns are about identifying common communication patterns betw
 This section includes design patterns that were not described in the "GoF" book, and includes the following patterns:
 
 - [Curiously Recurring Template Pattern (CRTP)](./crtp/crtp.md): define a compile-time abstraction for a family of related types.
-- [External Polymorphism](./external-polymorphism/external-polymorphism.md): allow classes unrelated by inheritance and/or having no virtual methods to be treated polymorphically. These unrelated classes can be treated in a common manner by software that uses them.
-- [Type Erasure](./type-erasure/type-erasure.md): provide a value-based, non-intrusive abstraction for an extendable set of unrelated, potentially non-polymorphic types with the same semantic behavior.
+- [External Polymorphism](./external_polymorphism/external_polymorphism.md): allow classes unrelated by inheritance and/or having no virtual methods to be treated polymorphically. These unrelated classes can be treated in a common manner by software that uses them.
+- [Type Erasure](./type_erasure/type_erasure.md): provide a value-based, non-intrusive abstraction for an extendable set of unrelated, potentially non-polymorphic types with the same semantic behavior.

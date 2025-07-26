@@ -82,11 +82,11 @@ $ cmake --list-presets=test
 
 ## Running the examples
 
-After compiling the project, an executable file is created for each design pattern, and can be run using the following command, where `<design-pattern>` corresponds to the executable file name of each design pattern (note that some configuration generators (e.g., Visual Studio) may add a configuration folder (e.g., Debug) in the path):
+After compiling the project, an executable file is created for each design pattern, and can be run using the following command, where `<design_pattern>` corresponds to the executable file name of each design pattern (note that some configuration generators (e.g., Visual Studio) may add a configuration folder (e.g., Debug) in the path):
 
 ```sh
 $ cd <build-directory>
-$ ./bin/<config>/<design-pattern>
+$ ./bin/<config>/<design_pattern>
 ```
 
 ## Coding style and format

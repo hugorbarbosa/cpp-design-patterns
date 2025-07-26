@@ -54,10 +54,10 @@ This project addresses both of these topics.
 
 This project is structured as follows:
 
-- [SOLID principles](./solid/solid-principles.md): description of the SOLID design principles.
-- [Design patterns](./design-patterns/design-patterns.md): presentation of software design patterns, as well as examples implemented in C++.
+- [SOLID principles](./solid/solid_principles.md): description of the SOLID design principles.
+- [Design patterns](./design_patterns/design_patterns.md): presentation of software design patterns, as well as examples implemented in C++.
 
-**Note:** This project uses UML diagrams. For more details about UML, please consult this [guide](https://github.com/hugorbarbosa/tutorials/blob/main/uml-basics/uml-basics.md).
+**Note:** This project uses UML diagrams. For more details about UML, please consult this [guide](https://github.com/hugorbarbosa/tutorials/blob/main/uml_basics/uml_basics.md).
 
 ## Building
 
