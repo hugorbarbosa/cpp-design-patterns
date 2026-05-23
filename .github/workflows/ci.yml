@@ -54,11 +54,7 @@ jobs:
     - name: Run executables
       shell: bash
       run: |
-        for f in ./build/${{ matrix.preset_build_type }}-${{ matrix.compiler }}/bin/*; do
-          if [[ -f "$f" ]]; then
-            "$f"
-          fi
-        done
+        find ./build/${{ matrix.preset_build_type }}-${{ matrix.compiler }}/bin -type f -executable -exec {} \;
 
   clang_format:
     runs-on: ubuntu-latest
@@ -117,11 +113,7 @@ jobs:
     - name: Run executables
       shell: bash
       run: |
-        for f in ./build/sanitizer-${{ matrix.sanitize }}/bin/*; do
-          if [[ -f "$f" ]]; then
-            "$f"
-          fi
-        done
+        find ./build/sanitizer-${{ matrix.sanitize }}/bin -type f -executable -exec {} \;
 
   doxygen:
     runs-on: ubuntu-latest

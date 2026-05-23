@@ -61,9 +61,5 @@ int main()
     object_adapter();
     class_adapter();
 
-    int* ptr = nullptr;
-    int x = *ptr; // Null pointer dereference.
-    (void)x;
-
     return EXIT_SUCCESS;
 }
