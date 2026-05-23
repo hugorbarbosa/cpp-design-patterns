@@ -15,11 +15,6 @@ ConcreteDecorator1::ConcreteDecorator1(std::unique_ptr<ComponentBase> component)
 
 std::string ConcreteDecorator1::operation()
 {
-    int* array = new int[42];
-    delete[] array;
-    int x = array[1]; // Use after free.
-    (void)x;
-
     return Decorator::operation() + ", concrete decorator 1";
 }
 
