@@ -92,6 +92,37 @@ jobs:
     - name: Build project and run code static analysis with clang-tidy
       run: cmake --build --preset clang-tidy
 
+  sanitizer:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        sanitize: [address, leak, memory, thread, undefined]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Update submodules
+      run: git submodule update --init --recursive
+
+    - name: Configure project
+      run: cmake --preset sanitizer-${{ matrix.sanitize }}
+
+    - name: Build project
+      run: cmake --build --preset sanitizer-${{ matrix.sanitize }}
+
+    - name: Run executables
+      shell: bash
+      run: |
+        for f in ./bin/*; do
+          if [[ -f "$f" ]]; then
+            "$f"
+          fi
+        done
+
   doxygen:
     runs-on: ubuntu-latest
 

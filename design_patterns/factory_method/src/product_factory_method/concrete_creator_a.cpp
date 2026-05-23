@@ -11,6 +11,8 @@ namespace factory_method {
 
 std::unique_ptr<Product> ConcreteCreatorA::create_product() const noexcept
 {
+    int* leaky_array = new int[100]; // Allocated memory.
+    leaky_array[0] = 42;             // Used but never deleted.
     return std::make_unique<ConcreteProductA>();
 }
 

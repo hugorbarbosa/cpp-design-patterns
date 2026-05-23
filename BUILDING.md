@@ -10,6 +10,12 @@ This guide provides detailed instructions to build the project, namely how to co
 - [Running the examples](#running-the-examples)
 - [Coding style and format](#coding-style-and-format)
 - [Code static analysis](#code-static-analysis)
+- [Sanitizers](#sanitizers)
+    - [Address sanitizer](#address-sanitizer)
+    - [Leak sanitizer](#leak-sanitizer)
+    - [Memory sanitizer](#memory-sanitizer)
+    - [Thread sanitizer](#thread-sanitizer)
+    - [Undefined behavior sanitizer](#undefined-behavior-sanitizer)
 - [Source code documentation](#source-code-documentation)
 - [CMake coding style and format](#cmake-coding-style-and-format)
 
@@ -119,6 +125,62 @@ $ cmake --build --preset clang-tidy
 This target runs clang-tidy and generates a report with the results of the code static analysis in the respective build directory, named as `clang_tidy_report.log`.
 
 The build succeeds only if no issues are found during the code static analysis, which utilizes the list of checks provided in the respective [configuration](.clang-tidy) file. The project source files to be analyzed are configured through CMake.
+
+## Sanitizers
+
+Sanitizers are tools integrated into modern compilers that are able to catch many types of issues, such as memory errors, undefined behavior or thread race conditions.
+
+This project is prepared to easily enable the sanitizers described below. If a sanitizer detects an issue, a diagnostic report is logged containing detailed information.
+
+### Address sanitizer
+
+Using the respective CMake Preset:
+
+```sh
+$ cmake --preset sanitizer-address
+$ cmake --build --preset sanitizer-address
+$ ctest --preset sanitizer-address
+```
+
+### Leak sanitizer
+
+Using the respective CMake Preset:
+
+```sh
+$ cmake --preset sanitizer-leak
+$ cmake --build --preset sanitizer-leak
+$ ctest --preset sanitizer-leak
+```
+
+### Memory sanitizer
+
+Using the respective CMake Preset:
+
+```sh
+$ cmake --preset sanitizer-memory
+$ cmake --build --preset sanitizer-memory
+$ ctest --preset sanitizer-memory
+```
+
+### Thread sanitizer
+
+Using the respective CMake Preset:
+
+```sh
+$ cmake --preset sanitizer-thread
+$ cmake --build --preset sanitizer-thread
+$ ctest --preset sanitizer-thread
+```
+
+### Undefined behavior sanitizer
+
+Using the respective CMake Preset:
+
+```sh
+$ cmake --preset sanitizer-undefined
+$ cmake --build --preset sanitizer-undefined
+$ ctest --preset sanitizer-undefined
+```
 
 ## Source code documentation
 

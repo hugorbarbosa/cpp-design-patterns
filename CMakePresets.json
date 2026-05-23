@@ -134,6 +134,51 @@
             }
         },
         {
+            "name": "sanitizer-address",
+            "displayName": "Address Sanitizer",
+            "description": "Address Sanitizer configuration using the clang compiler",
+            "inherits": "debug-clang",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_ASAN": "ON"
+            }
+        },
+        {
+            "name": "sanitizer-leak",
+            "displayName": "Leak Sanitizer",
+            "description": "Leak Sanitizer configuration using the clang compiler",
+            "inherits": "debug-clang",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_LSAN": "ON"
+            }
+        },
+        {
+            "name": "sanitizer-memory",
+            "displayName": "Memory Sanitizer",
+            "description": "Memory Sanitizer configuration using the clang compiler",
+            "inherits": "debug-clang",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_MSAN": "ON"
+            }
+        },
+        {
+            "name": "sanitizer-thread",
+            "displayName": "Thread Sanitizer",
+            "description": "Thread Sanitizer configuration using the clang compiler",
+            "inherits": "debug-clang",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_TSAN": "ON"
+            }
+        },
+        {
+            "name": "sanitizer-undefined",
+            "displayName": "Undefined Behavior Sanitizer",
+            "description": "Undefined Behavior Sanitizer configuration using the clang compiler",
+            "inherits": "debug-clang",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_UBSAN": "ON"
+            }
+        },
+        {
             "name": "doxygen",
             "displayName": "Doxygen",
             "description": "Doxygen configuration",
@@ -240,6 +285,41 @@
             "inherits": "default",
             "configurePreset": "clang-tidy",
             "targets": "clang_tidy"
+        },
+        {
+            "name": "sanitizer-address",
+            "displayName": "Address Sanitizer",
+            "description": "Address Sanitizer build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "sanitizer-address"
+        },
+        {
+            "name": "sanitizer-leak",
+            "displayName": "Leak Sanitizer",
+            "description": "Leak Sanitizer build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "sanitizer-leak"
+        },
+        {
+            "name": "sanitizer-memory",
+            "displayName": "Memory Sanitizer",
+            "description": "Memory Sanitizer build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "sanitizer-memory"
+        },
+        {
+            "name": "sanitizer-thread",
+            "displayName": "Thread Sanitizer",
+            "description": "Thread Sanitizer build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "sanitizer-thread"
+        },
+        {
+            "name": "sanitizer-undefined",
+            "displayName": "Undefined Behavior Sanitizer",
+            "description": "Undefined Behavior Sanitizer build using the clang compiler",
+            "inherits": "default-parallel",
+            "configurePreset": "sanitizer-undefined"
         },
         {
             "name": "doxygen",

@@ -60,7 +60,7 @@ The answer is: **SOLID principles** and **Design patterns**.
 
 This project uses CMake as its build system, with support for CMake Presets to simplify configuration and building.
 
-For detailed build instructions, including how to build the project, run examples, enable optional code quality tools (code formatting, static analysis, etc) and generate documentation, please see the [Building guide](BUILDING.md).
+For detailed build instructions, including how to build the project, run examples, enable optional code quality tools (code formatting, sanitizers, static analysis, etc) and generate documentation, please see the [Building guide](BUILDING.md).
 
 ## Future work
 

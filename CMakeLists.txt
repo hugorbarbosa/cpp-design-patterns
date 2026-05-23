@@ -38,6 +38,11 @@ get_git_info("GIT_INFO")
 # ----------------------------------------------------------------------------
 option(DESIGNPAT_ENABLE_CLANG_FORMAT "Enable code formatting with clang-format" OFF)
 option(DESIGNPAT_ENABLE_CLANG_TIDY "Enable code static analysis with clang-tidy" OFF)
+option(DESIGNPAT_ENABLE_ASAN "Enable Address Sanitizer" OFF)
+option(DESIGNPAT_ENABLE_LSAN "Enable Leak Sanitizer" OFF)
+option(DESIGNPAT_ENABLE_MSAN "Enable Memory Sanitizer" OFF)
+option(DESIGNPAT_ENABLE_TSAN "Enable Thread Sanitizer" OFF)
+option(DESIGNPAT_ENABLE_UBSAN "Enable Undefined Behavior Sanitizer" OFF)
 option(DESIGNPAT_ENABLE_DOXYGEN "Enable doxygen documentation generation" OFF)
 option(DESIGNPAT_ENABLE_CMAKE_FORMAT "Enable CMake code formatting with cmake-format" OFF)
 option(DESIGNPAT_ENABLE_CMAKE_LINT "Enable CMake lint with cmake-lint" OFF)
@@ -96,6 +101,28 @@ if(DESIGNPAT_ENABLE_CLANG_TIDY)
     add_clang_tidy(
         DIRECTORIES "${source_code_dirs}" LOG_FILE "${CMAKE_BINARY_DIR}/clang_tidy_report.log"
         CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/.clang-tidy"
+    )
+endif()
+
+if(DESIGNPAT_ENABLE_ASAN
+   OR DESIGNPAT_ENABLE_LSAN
+   OR DESIGNPAT_ENABLE_MSAN
+   OR DESIGNPAT_ENABLE_TSAN
+   OR DESIGNPAT_ENABLE_UBSAN
+)
+    include(Sanitizers)
+    add_sanitizers(
+        ${compiler_options_lib}
+        ASAN
+        ${DESIGNPAT_ENABLE_ASAN}
+        LSAN
+        ${DESIGNPAT_ENABLE_LSAN}
+        MSAN
+        ${DESIGNPAT_ENABLE_MSAN}
+        TSAN
+        ${DESIGNPAT_ENABLE_TSAN}
+        UBSAN
+        ${DESIGNPAT_ENABLE_UBSAN}
     )
 endif()
 
@@ -168,6 +195,11 @@ message(STATUS "- CMAKE_EXPORT_COMPILE_COMMANDS = ${CMAKE_EXPORT_COMPILE_COMMAND
 message(STATUS "- PROJECT_IS_TOP_LEVEL = ${PROJECT_IS_TOP_LEVEL}")
 message(STATUS "- DESIGNPAT_ENABLE_CLANG_FORMAT = ${DESIGNPAT_ENABLE_CLANG_FORMAT}")
 message(STATUS "- DESIGNPAT_ENABLE_CLANG_TIDY = ${DESIGNPAT_ENABLE_CLANG_TIDY}")
+message(STATUS "- DESIGNPAT_ENABLE_ASAN = ${DESIGNPAT_ENABLE_ASAN}")
+message(STATUS "- DESIGNPAT_ENABLE_LSAN = ${DESIGNPAT_ENABLE_LSAN}")
+message(STATUS "- DESIGNPAT_ENABLE_MSAN = ${DESIGNPAT_ENABLE_MSAN}")
+message(STATUS "- DESIGNPAT_ENABLE_TSAN = ${DESIGNPAT_ENABLE_TSAN}")
+message(STATUS "- DESIGNPAT_ENABLE_UBSAN = ${DESIGNPAT_ENABLE_UBSAN}")
 message(STATUS "- DESIGNPAT_ENABLE_DOXYGEN = ${DESIGNPAT_ENABLE_DOXYGEN}")
 message(STATUS "- DESIGNPAT_ENABLE_CMAKE_FORMAT = ${DESIGNPAT_ENABLE_CMAKE_FORMAT}")
 message(STATUS "- DESIGNPAT_ENABLE_CMAKE_LINT = ${DESIGNPAT_ENABLE_CMAKE_LINT}")

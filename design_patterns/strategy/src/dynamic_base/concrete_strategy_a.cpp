@@ -13,6 +13,9 @@ namespace dynamic_base {
 void ConcreteStrategyA::execute() noexcept
 {
     std::cout << "Executing strategy A\n";
+    int* a = new int[10];
+    auto x = a[5]; // Use of uninitialized value.
+    std::cout << "x = " << x << "\n";
 }
 
 } // namespace dynamic_base
