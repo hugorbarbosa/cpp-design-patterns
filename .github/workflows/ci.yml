@@ -54,7 +54,12 @@ jobs:
     - name: Run executables
       shell: bash
       run: |
-        find ./build/${{ matrix.preset_build_type }}-${{ matrix.compiler }}/bin -type f -executable -exec {} \;
+        find ./build/${{ matrix.preset_build_type }}-${{ matrix.compiler }}/bin -type f -executable -exec sh -c '
+        for f do
+          echo "Running $f"
+          "$f" || exit 1
+        done
+        ' sh {} +
 
   clang_format:
     runs-on: ubuntu-latest
@@ -113,7 +118,12 @@ jobs:
     - name: Run executables
       shell: bash
       run: |
-        find ./build/sanitizer-${{ matrix.sanitize }}/bin -type f -executable -exec {} \;
+        find ./build/sanitizer-${{ matrix.sanitize }}/bin -type f -executable -exec sh -c '
+        for f do
+          echo "Running $f"
+          "$f" || exit 1
+        done
+        ' sh {} +
 
   doxygen:
     runs-on: ubuntu-latest
