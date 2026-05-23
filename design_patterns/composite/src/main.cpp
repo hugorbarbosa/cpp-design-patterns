@@ -1,6 +1,6 @@
 /**
  * @file
- * @copyright Copyright (c) 2024.
+ * @copyright Copyright (C) 2024 Hugo Barbosa.
  */
 
 #include <cassert>
@@ -26,9 +26,9 @@ int main()
         = [](const std::unique_ptr<Component>& component) { component->operation(); };
 
     // Leafs.
-    std::unique_ptr<Component> leaf1{std::make_unique<Leaf>(1)};
-    std::unique_ptr<Component> leaf2{std::make_unique<Leaf>(2)};
-    std::unique_ptr<Component> leaf3{std::make_unique<Leaf>(3)};
+    std::unique_ptr<Component> leaf1{std::make_unique<Leaf>(static_cast<uint8_t>(1))};
+    std::unique_ptr<Component> leaf2{std::make_unique<Leaf>(static_cast<uint8_t>(2))};
+    std::unique_ptr<Component> leaf3{std::make_unique<Leaf>(static_cast<uint8_t>(3))};
 
     // Composite with leafs.
     std::unique_ptr<Component> composite1{std::make_unique<Composite>()};

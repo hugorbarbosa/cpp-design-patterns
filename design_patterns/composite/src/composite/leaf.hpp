@@ -1,6 +1,6 @@
 /**
  * @file
- * @copyright Copyright (c) 2024.
+ * @copyright Copyright (C) 2024 Hugo Barbosa.
  */
 
 #ifndef DESIGN_PATTERNS_LEAF_HPP

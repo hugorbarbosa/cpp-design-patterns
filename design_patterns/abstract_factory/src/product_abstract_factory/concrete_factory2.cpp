@@ -1,6 +1,6 @@
 /**
  * @file
- * @copyright Copyright (c) 2024.
+ * @copyright Copyright (C) 2024 Hugo Barbosa.
  */
 
 #include "concrete_factory2.hpp"

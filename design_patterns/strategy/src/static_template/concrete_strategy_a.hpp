@@ -1,6 +1,6 @@
 /**
  * @file
- * @copyright Copyright (c) 2023.
+ * @copyright Copyright (C) 2023 Hugo Barbosa.
  */
 
 #ifndef DESIGN_PATTERNS_CONCRETE_STRATEGY_A_STATIC_HPP
