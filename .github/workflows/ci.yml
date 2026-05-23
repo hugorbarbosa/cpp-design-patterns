@@ -54,7 +54,7 @@ jobs:
     - name: Run executables
       shell: bash
       run: |
-        for f in ./bin/*; do
+        for f in ./build/${{ matrix.preset_build_type }}-${{ matrix.compiler }}/bin/*; do
           if [[ -f "$f" ]]; then
             "$f"
           fi
@@ -117,7 +117,7 @@ jobs:
     - name: Run executables
       shell: bash
       run: |
-        for f in ./bin/*; do
+        for f in ./build/sanitizer-${{ matrix.sanitize }}/bin/*; do
           if [[ -f "$f" ]]; then
             "$f"
           fi
