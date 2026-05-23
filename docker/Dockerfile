@@ -15,6 +15,7 @@ RUN apt-get install -y --no-install-recommends \
     clang-format \
     clang-tidy \
     cmake \
+    cmake-format \
     doxygen \
     g++ \
     gcc \

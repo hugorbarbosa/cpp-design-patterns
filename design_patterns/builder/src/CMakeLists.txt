@@ -1,14 +1,13 @@
-project(builder)
-
 add_subdirectory(product_builder)
 
-add_executable(${PROJECT_NAME}
-    main.cpp
+set(target_name "builder")
+add_executable(${target_name})
+
+target_sources(${target_name} PRIVATE main.cpp)
+
+target_link_libraries(
+    ${target_name} PRIVATE ${DESIGNPAT_PROJECT_NAME}::compile_options
+                           ${DESIGNPAT_PROJECT_NAME}::product_builder
 )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::compile_options
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::product_builder
-)
-
-set_target_binary_output_directory(${PROJECT_NAME})
+set_target_binary_output_directory(${target_name})

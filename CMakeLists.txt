@@ -5,24 +5,21 @@
 # ----------------------------------------------------------------------------
 # Project setup
 # ----------------------------------------------------------------------------
+cmake_minimum_required(VERSION 3.28)
 
-cmake_minimum_required(VERSION 3.21)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
+     "${CMAKE_CURRENT_SOURCE_DIR}/external/cmake-modules/modules"
+)
 
-set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
-
-project(cpp_design_patterns
+project(
+    cpp_design_patterns
     VERSION 1.0.0
     LANGUAGES CXX
     DESCRIPTION "C++ design patterns."
 )
 
-set(CPPDPAT_PROJECT_NAME ${PROJECT_NAME})
-set(CPPDPAT_PROJECT_VERSION ${PROJECT_VERSION})
-
-set(MAIN_PROJECT OFF)
-if(CMAKE_CURRENT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-    set(MAIN_PROJECT ON)
-endif()
+set(DESIGNPAT_PROJECT_NAME ${PROJECT_NAME})
+set(DESIGNPAT_PROJECT_VERSION ${PROJECT_VERSION})
 
 # ----------------------------------------------------------------------------
 # Pre-requirements
@@ -31,22 +28,28 @@ include(SourceBuilds)
 validate_build_directory()
 
 # ----------------------------------------------------------------------------
+# Git information
+# ----------------------------------------------------------------------------
+include(GitInfo)
+get_git_info("GIT_INFO")
+
+# ----------------------------------------------------------------------------
 # Configuration options
 # ----------------------------------------------------------------------------
-option(CPPDPAT_ENABLE_CLANG_FORMAT "Enable code formatting check with clang-format" OFF)
-option(CPPDPAT_ENABLE_CLANG_TIDY "Enable code static analysis with clang-tidy" OFF)
-option(CPPDPAT_ENABLE_DOXYGEN "Enable doxygen documentation generation" OFF)
+option(DESIGNPAT_ENABLE_CLANG_FORMAT "Enable code formatting with clang-format" OFF)
+option(DESIGNPAT_ENABLE_CLANG_TIDY "Enable code static analysis with clang-tidy" OFF)
+option(DESIGNPAT_ENABLE_DOXYGEN "Enable doxygen documentation generation" OFF)
+option(DESIGNPAT_ENABLE_CMAKE_FORMAT "Enable CMake code formatting with cmake-format" OFF)
+option(DESIGNPAT_ENABLE_CMAKE_LINT "Enable CMake lint with cmake-lint" OFF)
 
 # ----------------------------------------------------------------------------
 # CMake options
 # ----------------------------------------------------------------------------
-if(MAIN_PROJECT)
-    # Build type on single-configuration generators (e.g. Makefile or Ninja).
-    # Set default build type if build type not set.
+if(PROJECT_IS_TOP_LEVEL)
     if(NOT CMAKE_BUILD_TYPE)
-        set(DEFAULT_BUILD_TYPE Debug)
-        message(STATUS "No build type specified, setting it to '${DEFAULT_BUILD_TYPE}'")
-        set(CMAKE_BUILD_TYPE ${DEFAULT_BUILD_TYPE})
+        set(default_build_type Debug)
+        message(STATUS "No build type specified, setting it to '${default_build_type}'")
+        set(CMAKE_BUILD_TYPE ${default_build_type})
     endif()
 
     # Generates a JSON file containing the exact compiler commands. Useful for clang-based tools.
@@ -65,55 +68,84 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 include(CompilerOptions)
 
-set(PROJECT_COMPILER_OPTIONS_LIBRARY compile_options)
-set(COMPILATION_WARNINGS_AS_ERRORS ${MAIN_PROJECT})
-set_project_default_compiler_options(
-    ${PROJECT_COMPILER_OPTIONS_LIBRARY}
-    ${CPPDPAT_PROJECT_NAME}
-    ${COMPILATION_WARNINGS_AS_ERRORS}
-)
+set(compiler_options_lib compile_options)
+add_library(${compiler_options_lib} INTERFACE)
+add_library(${DESIGNPAT_PROJECT_NAME}::${compiler_options_lib} ALIAS ${compiler_options_lib})
+if(PROJECT_IS_TOP_LEVEL)
+    add_default_compiler_options(${compiler_options_lib} WARNINGS_AS_ERRORS)
+else()
+    add_default_compiler_options(${compiler_options_lib})
+endif()
 
 # ----------------------------------------------------------------------------
 # Quality tools
 # ----------------------------------------------------------------------------
-if(CPPDPAT_ENABLE_CLANG_FORMAT)
+
+set(source_code_dirs "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns")
+
+if(DESIGNPAT_ENABLE_CLANG_FORMAT)
     include(ClangFormat)
-    set(CLANG_FORMAT_DIRECTORIES
-        "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns"
+    add_clang_format(
+        DIRECTORIES "${source_code_dirs}" LOG_FILE "${CMAKE_BINARY_DIR}/clang_format_report.log"
+        CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/.clang-format"
     )
-    set(CLANG_FORMAT_LOG_FILE "clang-format-report.log")
-    enable_clang_format_check("${CLANG_FORMAT_DIRECTORIES}" ${CLANG_FORMAT_LOG_FILE})
 endif()
 
-if(CPPDPAT_ENABLE_CLANG_TIDY)
+if(DESIGNPAT_ENABLE_CLANG_TIDY)
     include(ClangTidy)
-    set(CLANG_TIDY_DIRECTORIES
-        "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns"
+    add_clang_tidy(
+        DIRECTORIES "${source_code_dirs}" LOG_FILE "${CMAKE_BINARY_DIR}/clang_tidy_report.log"
+        CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/.clang-tidy"
     )
-    set(CLANG_TIDY_LOG_FILE "clang-tidy-report.log")
-    enable_clang_tidy("${CLANG_TIDY_DIRECTORIES}" ${CLANG_TIDY_LOG_FILE})
 endif()
 
-if(CPPDPAT_ENABLE_DOXYGEN)
-    include(DoxygenDoc)
-    set(DOXYGEN_CONFIG_FILE "${CMAKE_CURRENT_SOURCE_DIR}/doxygen/Doxyfile.in")
-    set(DOXYGEN_PROJECT "C++ Design Patterns")
-    set(DOXYGEN_VERSION ${CPPDPAT_PROJECT_VERSION})
-    set(DOXYGEN_BRIEF "Design patterns using Modern C++")
-    set(DOXYGEN_INPUT_LIST
-        "${CMAKE_CURRENT_SOURCE_DIR}/design_patterns"
+if(DESIGNPAT_ENABLE_DOXYGEN)
+    include(Doxygen)
+    add_doxygen(
+        DOXYFILE_IN
+        "${CMAKE_CURRENT_SOURCE_DIR}/doxygen/Doxyfile.in"
+        DOXYGEN_PROJECT_NAME
+        "C++ Design Patterns"
+        DOXYGEN_PROJECT_NUMBER
+        ${DESIGNPAT_PROJECT_VERSION}
+        DOXYGEN_PROJECT_BRIEF
+        "Design patterns using C++"
+        DOXYGEN_INPUT
+        "${source_code_dirs}"
+        DOXYGEN_OUTPUT_DIRECTORY
+        "${CMAKE_BINARY_DIR}/doxygen"
+        LOG_FILE
+        "${CMAKE_BINARY_DIR}/doxygen_report.log"
     )
-    string(REPLACE ";" " " DOXYGEN_INPUT "${DOXYGEN_INPUT_LIST}")
-    set(DOXYGEN_OUT_DIR "${CMAKE_BINARY_DIR}/doxygen")
-    set(DOXYGEN_LOG_FILE "doxygen-report.log")
-    enable_doxygen_doc(
-        ${DOXYGEN_CONFIG_FILE}
-        ${DOXYGEN_PROJECT}
-        ${DOXYGEN_VERSION}
-        ${DOXYGEN_BRIEF}
-        ${DOXYGEN_INPUT}
-        ${DOXYGEN_OUT_DIR}
-        ${DOXYGEN_LOG_FILE}
+endif()
+
+if(DESIGNPAT_ENABLE_CMAKE_FORMAT)
+    include(CmakeFormat)
+    add_cmake_format(
+        DIRECTORIES
+        "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
+        "${source_code_dirs}"
+        EXTRA_FILES
+        "${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt"
+        LOG_FILE
+        "${CMAKE_BINARY_DIR}/cmake_format_report.log"
+        CONFIG_FILE
+        "${CMAKE_CURRENT_SOURCE_DIR}/.cmake-format.py"
+    )
+endif()
+
+if(DESIGNPAT_ENABLE_CMAKE_LINT)
+    include(CmakeLint)
+    add_cmake_lint(
+        DIRECTORIES
+        "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
+        "${source_code_dirs}"
+        EXTRA_FILES
+        "${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.txt"
+        LOG_FILE
+        "${CMAKE_BINARY_DIR}/cmake_lint_report.log"
+        CONFIG_FILE
+        "${CMAKE_CURRENT_SOURCE_DIR}/.cmake-format.py"
     )
 endif()
 
@@ -127,14 +159,16 @@ add_subdirectory(design_patterns)
 # Configuration report
 # ----------------------------------------------------------------------------
 message(STATUS)
-message(STATUS "${CPPDPAT_PROJECT_NAME} ${CPPDPAT_PROJECT_VERSION} configuration:")
+message(STATUS "${DESIGNPAT_PROJECT_NAME} ${DESIGNPAT_PROJECT_VERSION} configuration:")
 message(STATUS "- CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
 message(STATUS "- CMAKE_CXX_COMPILER_ID = ${CMAKE_CXX_COMPILER_ID}")
 message(STATUS "- CMAKE_CXX_COMPILER_VERSION = ${CMAKE_CXX_COMPILER_VERSION}")
 message(STATUS "- CMAKE_CXX_STANDARD = ${CMAKE_CXX_STANDARD}")
 message(STATUS "- CMAKE_EXPORT_COMPILE_COMMANDS = ${CMAKE_EXPORT_COMPILE_COMMANDS}")
-message(STATUS "- CPPDPAT_ENABLE_CLANG_FORMAT = ${CPPDPAT_ENABLE_CLANG_FORMAT}")
-message(STATUS "- CPPDPAT_ENABLE_CLANG_TIDY = ${CPPDPAT_ENABLE_CLANG_TIDY}")
-message(STATUS "- CPPDPAT_ENABLE_DOXYGEN = ${CPPDPAT_ENABLE_DOXYGEN}")
-message(STATUS "- MAIN_PROJECT = ${MAIN_PROJECT}")
+message(STATUS "- PROJECT_IS_TOP_LEVEL = ${PROJECT_IS_TOP_LEVEL}")
+message(STATUS "- DESIGNPAT_ENABLE_CLANG_FORMAT = ${DESIGNPAT_ENABLE_CLANG_FORMAT}")
+message(STATUS "- DESIGNPAT_ENABLE_CLANG_TIDY = ${DESIGNPAT_ENABLE_CLANG_TIDY}")
+message(STATUS "- DESIGNPAT_ENABLE_DOXYGEN = ${DESIGNPAT_ENABLE_DOXYGEN}")
+message(STATUS "- DESIGNPAT_ENABLE_CMAKE_FORMAT = ${DESIGNPAT_ENABLE_CMAKE_FORMAT}")
+message(STATUS "- DESIGNPAT_ENABLE_CMAKE_LINT = ${DESIGNPAT_ENABLE_CMAKE_LINT}")
 message(STATUS)

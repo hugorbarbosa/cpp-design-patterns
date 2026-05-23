@@ -19,7 +19,7 @@ $ docker build . -t designpatterns
 
 ## Run image
 
-Run image creating a container and mounting the project (`<project-directory>` must have the absolute path, e.g., c:\Projects\cpp-design-patterns on Windows or /home/user/projects/cpp-design-patterns on Linux):
+Run image creating a container and mounting the project (`<project-directory>` must have the absolute path, e.g., c:\projects\cpp-design-patterns on Windows or /home/user/projects/cpp-design-patterns on Linux):
 
 ```sh
 $ docker run -it --name mycontainer -v <project-directory>:/src designpatterns

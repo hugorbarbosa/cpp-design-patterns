@@ -21,7 +21,7 @@ The SOLID design principles are:
 - ISP: The Interface Segregation Principle.
 - DIP: The Dependency Inversion Principle.
 
-Note that the SOLID principles are tools for better maintainability and changeability, but are not goals. It can be counterproductive to separate all entities and structure the code only to follow the SOLID principles, so software developers need to design the software to have high quality but they should pay attention to not overengineering the project.
+The SOLID principles are tools for better maintainability and changeability, but they are not goals. It can be counterproductive to separate all entities and structure the code only to follow the SOLID principles, so software developers need to design the software to have high quality but they should pay attention to not overengineering the project.
 
 ## SRP: The Single Responsibility Principle
 

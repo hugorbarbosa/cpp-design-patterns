@@ -5,7 +5,7 @@
             "name": "default",
             "displayName": "Default",
             "description": "Default configuration",
-            "binaryDir": "${sourceDir}/build-${presetName}",
+            "binaryDir": "${sourceDir}/build/${presetName}",
             "hidden": true
         },
         {
@@ -121,7 +121,7 @@
             "description": "Clang-format configuration",
             "inherits": "debug",
             "cacheVariables": {
-                "CPPDPAT_ENABLE_CLANG_FORMAT": "ON"
+                "DESIGNPAT_ENABLE_CLANG_FORMAT": "ON"
             }
         },
         {
@@ -130,7 +130,7 @@
             "description": "Clang-tidy configuration",
             "inherits": "debug-clang",
             "cacheVariables": {
-                "CPPDPAT_ENABLE_CLANG_TIDY": "ON"
+                "DESIGNPAT_ENABLE_CLANG_TIDY": "ON"
             }
         },
         {
@@ -139,7 +139,25 @@
             "description": "Doxygen configuration",
             "inherits": "debug",
             "cacheVariables": {
-                "CPPDPAT_ENABLE_DOXYGEN": "ON"
+                "DESIGNPAT_ENABLE_DOXYGEN": "ON"
+            }
+        },
+        {
+            "name": "cmake-format",
+            "displayName": "CMake format",
+            "description": "CMake format configuration",
+            "inherits": "debug",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_CMAKE_FORMAT": "ON"
+            }
+        },
+        {
+            "name": "cmake-lint",
+            "displayName": "CMake lint",
+            "description": "CMake lint configuration",
+            "inherits": "debug",
+            "cacheVariables": {
+                "DESIGNPAT_ENABLE_CMAKE_LINT": "ON"
             }
         }
     ],
@@ -200,12 +218,20 @@
             "configurePreset": "release-clang"
         },
         {
-            "name": "clang-format",
-            "displayName": "Clang-format",
-            "description": "Clang-format build target",
+            "name": "clang-format-check",
+            "displayName": "Clang-format check",
+            "description": "Clang-format check build target",
             "inherits": "default",
             "configurePreset": "clang-format",
-            "targets": "clang_format"
+            "targets": "clang_format_check"
+        },
+        {
+            "name": "clang-format-apply",
+            "displayName": "Clang-format apply",
+            "description": "Clang-format apply build target",
+            "inherits": "default",
+            "configurePreset": "clang-format",
+            "targets": "clang_format_apply"
         },
         {
             "name": "clang-tidy",
@@ -222,6 +248,30 @@
             "inherits": "default",
             "configurePreset": "doxygen",
             "targets": "doxygen"
+        },
+        {
+            "name": "cmake-format-check",
+            "displayName": "CMake format check",
+            "description": "CMake format check build target",
+            "inherits": "default",
+            "configurePreset": "cmake-format",
+            "targets": "cmake_format_check"
+        },
+        {
+            "name": "cmake-format-apply",
+            "displayName": "CMake format apply",
+            "description": "CMake format apply build target",
+            "inherits": "default",
+            "configurePreset": "cmake-format",
+            "targets": "cmake_format_apply"
+        },
+        {
+            "name": "cmake-lint",
+            "displayName": "CMake lint",
+            "description": "CMake lint build target",
+            "inherits": "default",
+            "configurePreset": "cmake-lint",
+            "targets": "cmake_lint"
         }
     ],
     "testPresets": [

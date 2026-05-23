@@ -3,8 +3,8 @@
  * @copyright Copyright (c) 2023.
  */
 
-#include <ConcreteCreatorA.h>
-#include <ConcreteCreatorB.h>
+#include <concrete_creator_a.hpp>
+#include <concrete_creator_b.hpp>
 #include <iostream>
 
 /**
@@ -14,25 +14,27 @@
  */
 int main()
 {
-    std::cout << "== Factory Method ====" << std::endl;
+    std::cout << "== Factory Method ====\n";
 
-    using namespace cppDesignPatterns::factoryMethod;
+    using cpp_design_patterns::factory_method::ConcreteCreatorA;
+    using cpp_design_patterns::factory_method::ConcreteCreatorB;
+    using cpp_design_patterns::factory_method::Creator;
 
     // Note that the client code does not know the concrete products.
 
     // Helper function to create the product and print its information.
-    auto createProduct = [](const ICreator& creator) {
-        const auto product = creator.createProduct();
-        std::cout << "Product info: " << product->getInfo() << std::endl;
+    auto create_product = [](const Creator& creator) {
+        const auto product = creator.create_product();
+        std::cout << "Product info: " << product->get_info() << "\n";
     };
 
     // Create product A.
-    ConcreteCreatorA concreteCreatorA;
-    createProduct(concreteCreatorA);
+    const ConcreteCreatorA concrete_creator_a;
+    create_product(concrete_creator_a);
 
     // Create product B.
-    ConcreteCreatorB concreteCreatorB;
-    createProduct(concreteCreatorB);
+    const ConcreteCreatorB concrete_creator_b;
+    create_product(concrete_creator_b);
 
     return EXIT_SUCCESS;
 }

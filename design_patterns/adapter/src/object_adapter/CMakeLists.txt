@@ -1,15 +1,15 @@
-project(object_adapter)
+set(target_name "object_adapter")
+add_library(${target_name} STATIC)
+add_library(${DESIGNPAT_PROJECT_NAME}::${target_name} ALIAS ${target_name})
 
-add_library(${PROJECT_NAME} STATIC
-    ObjectAdapter.cpp
+target_sources(
+    ${target_name}
+    PRIVATE object_adapter.cpp
+    PUBLIC FILE_SET HEADERS
 )
-add_library(${CPPDPAT_PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-target_include_directories(${PROJECT_NAME}
-    PUBLIC .
-)
-
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::compile_options
-    PUBLIC ${CPPDPAT_PROJECT_NAME}::adapter_common
+target_link_libraries(
+    ${target_name}
+    PRIVATE ${DESIGNPAT_PROJECT_NAME}::compile_options
+    PUBLIC ${DESIGNPAT_PROJECT_NAME}::adapter_common
 )

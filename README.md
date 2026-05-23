@@ -1,14 +1,15 @@
 # Software Design: SOLID Principles and Design Patterns in C++
 
-This project includes my study related to the topic of Software Design, particularly the importance of software design for the quality of a project, the SOLID design principles and software design patterns.
+This project includes my study about software design, particularly the importance of software design for the quality of a project, the SOLID design principles and software design patterns.
 
-Design pattern implementation examples are also available in this project using Modern C++.
+Design pattern implementation examples are also available in this project using C++.
 
 ## Table of contents
 
 - [Motivation](#motivation)
 - [Project structure](#project-structure)
 - [Building](#building)
+- [Future work](#future-work)
 - [License](#license)
 - [References](#references)
 
@@ -16,7 +17,7 @@ Design pattern implementation examples are also available in this project using 
 
 "**Soft**ware", as the name implies, must be ***soft***, which means that it must be easy to change and extend, and that is the expectation for any software project. That's why it is called *software* in comparison to *hardware*, which is difficult to change. Indeed, one constant in software development is **change**, therefore it is expected that software is easily adapted to the ever-changing requirements. However, in reality, this expectation is often difficult to achieve.
 
-High-quality software is software that is easy to **change**, easy to **extend**, and easy to **test**. But, developing high-quality software is hard, very hard. The design of the software should be able to solve the current problem but also general enough to address future problems and requirements. It is also important to avoid redesign, or at least minimize it, but a reusable and flexible design is difficult to get it right the first time.
+High-quality software is software that is easy to **change**, easy to **extend**, and easy to **test**. But, developing high-quality software is very hard. The design of the software should be able to solve the current problem but also general enough to address future problems and requirements. It is also important to avoid redesign, or at least minimize it, but a reusable and flexible design is difficult to get it right the first time.
 
 ***What is the core problem of adaptable software and software development in general?***
 
@@ -24,7 +25,7 @@ The answer is: **Dependencies**.
 
 > "Dependency is the key problem in software development at all scales." (Kent Beck, *Test-Driven Development: By Example*)
 
-This formulation is so true. Indeed, the problem is always about dealing with the connections and relationships between classes and modules. In software, different pieces of code need to work together, and this interaction can create some form of coupling. These artificial dependencies make software harder to change, read, test, and maintain. Thus, the software must be developed in a way that keeps these artificial dependencies at a minimum.
+This formulation is so true. The problem is always about dealing with the connections and relationships between classes and modules. In software, different pieces of code need to work together, and this interaction can create some form of coupling. These artificial dependencies make software harder to change, read, test, and maintain. Thus, the software must be developed in a way that keeps these artificial dependencies at a minimum.
 
 ***How to break these dependencies?***
 
@@ -48,14 +49,10 @@ Software design is essential and can be considered the foundation of the success
 
 The answer is: **SOLID principles** and **Design patterns**.
 
-This project addresses both of these topics.
-
 ## Project structure
 
-This project is structured as follows:
-
 - [SOLID principles](./solid/solid_principles.md): description of the SOLID design principles.
-- [Design patterns](./design_patterns/design_patterns.md): presentation of software design patterns, as well as examples implemented in C++.
+- [Design patterns](./design_patterns/design_patterns.md): presentation of software design patterns, as well as code examples using C++.
 
 **Note:** This project uses UML diagrams. For more details about UML, please consult this [guide](https://github.com/hugorbarbosa/tutorials/blob/main/uml_basics/uml_basics.md).
 
@@ -63,7 +60,15 @@ This project is structured as follows:
 
 This project uses CMake as its build system, with support for CMake Presets to simplify configuration and building.
 
-For detailed build instructions, including how to build the project, run examples, enable optional code quality tools (code format, static analysis, etc) and generate documentation, please see the [Building guide](BUILDING.md).
+For detailed build instructions, including how to build the project, run examples, enable optional code quality tools (code formatting, static analysis, etc) and generate documentation, please see the [Building guide](BUILDING.md).
+
+## Future work
+
+- Design patterns:
+    - Implement a new structure for the documentation of each design pattern, with different sections to provide more useful information.
+    - Consider using Mermaid to design diagrams.
+    - Refactor the already documented design patterns to use concrete examples, instead of generic ones.
+    - Add documentation and code examples for the missing design patterns.
 
 ## License
 

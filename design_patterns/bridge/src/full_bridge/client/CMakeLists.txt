@@ -1,12 +1,7 @@
-project(pimpl_bridge_client)
+set(target_name "pimpl_bridge_client")
+add_library(${target_name} INTERFACE)
+add_library(${DESIGNPAT_PROJECT_NAME}::${target_name} ALIAS ${target_name})
 
-add_library(${PROJECT_NAME} INTERFACE)
-add_library(${CPPDPAT_PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
+target_sources(${target_name} PUBLIC FILE_SET HEADERS)
 
-target_include_directories(${PROJECT_NAME}
-    INTERFACE .
-)
-
-target_link_libraries(${PROJECT_NAME}
-    INTERFACE ${CPPDPAT_PROJECT_NAME}::compile_options
-)
+target_link_libraries(${target_name} INTERFACE ${DESIGNPAT_PROJECT_NAME}::compile_options)

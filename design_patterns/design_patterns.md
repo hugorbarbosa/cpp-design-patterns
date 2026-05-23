@@ -11,7 +11,7 @@
 
 ## Introduction
 
-The software design patterns gained popularity with the book "Design Patterns: Elements of Reusable Object-Oriented Software" was published in 1994, by the authors Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. These four authors are often referred to as "the Gang of Four" (GoF).
+The software design patterns gained popularity with the book "Design Patterns: Elements of Reusable Object-Oriented Software" that was published in 1994, by the authors Erich Gamma, Richard Helm, Ralph Johnson and John Vlissides. These four authors are often referred to as "the Gang of Four" (GoF).
 
 Although we have been hearing about design patterns for some time and the importance they are recognized for, there is still some lack of knowledge or misconceptions regarding their use. In that regard, it is essential to understand what a design pattern really is and how to use it correctly.
 
@@ -22,17 +22,17 @@ A software design pattern is a general reusable solution to a commonly occurring
 - **Abstraction**: a design pattern provides some sort of abstraction (base class, template, etc). It is always concerned with managing the interaction between the different entities in a software, with the aim of reducing dependencies between them, decoupling these pieces of code and enabling design for change and extension.
 - **Proven to work**: a design pattern has been proven to work over the years, being a solution that has only emerged as a pattern after it has been demonstrated several times that it works.
 
-In addition, it is also relevant to mention that using a design pattern doesn't mean necessarily a good design, because inappropriate use of patterns may unnecessarily increase the complexity of a given simple problem. Thus, the use of a design pattern should not be considered as a goal and as a guarantee for achieving high-quality software. Instead, a design pattern is a mean to achieve a goal and to improve the code quality, reducing the dependencies and creating a better code structure. That's why it is very important to understand the intent and properties of each design pattern, so that the design patterns can be properly used and applied wisely.
+In addition, it is relevant to mention that using a design pattern doesn't mean necessarily a good design, because inappropriate use of patterns may unnecessarily increase the complexity of a given simple problem. Thus, the use of a design pattern should not be considered as a goal and as a guarantee for achieving high-quality software. Instead, a design pattern is a mean to achieve a goal and to improve the code quality, reducing the dependencies and creating a better code structure. That's why it is very important to understand the intent and properties of each design pattern, so that the design patterns can be properly used and applied wisely.
 
 ## Design patterns catalog
 
-The book "Design Patterns: Elements of Reusable Object-Oriented Software" conceptualized 23 design patterns, commonly called the "classic" or the "GoF" design patterns, divided into 3 categories:
+"Design Patterns: Elements of Reusable Object-Oriented Software" introduced 23 foundational design patterns, commonly known as the "classic" or the "GoF" patterns, which are grouped into three categories:
 
 - Creational patterns.
 - Structural patterns.
 - Behavioral patterns.
 
-There are additional design patterns that were not collected in the "GoF" book, and they are listed in this guide in the "Other patterns" section.
+Additional design patterns beyond those covered in the "GoF" book are also included in this project under the “Other patterns” section.
 
 ### Creational patterns
 
@@ -58,7 +58,7 @@ The Structural patterns demonstrate how different classes and objects can be org
 
 ### Behavioral patterns
 
-The Behavioral patterns are about identifying common communication patterns between objects and realizing these patterns. This category includes the following patterns:
+The Behavioral patterns are about identifying common communication patterns between objects and realizing these patterns. This category includes the following patterns and intents:
 
 - [Chain of Responsibility](./chain_of_responsibility/chain_of_responsibility.md): avoid coupling the sender of a request to its receiver by giving more than one object a chance to handle the request. Chain the receiving objects and pass the request along the chain until an object handles it.
 - [Command](./command/command.md): encapsule a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
@@ -74,7 +74,7 @@ The Behavioral patterns are about identifying common communication patterns betw
 
 ### Other patterns
 
-This section includes design patterns that were not described in the "GoF" book, and includes the following patterns:
+This section includes design patterns that were not covered in the "GoF" book, and includes the following patterns and intents:
 
 - [Curiously Recurring Template Pattern (CRTP)](./crtp/crtp.md): define a compile-time abstraction for a family of related types.
 - [External Polymorphism](./external_polymorphism/external_polymorphism.md): allow classes unrelated by inheritance and/or having no virtual methods to be treated polymorphically. These unrelated classes can be treated in a common manner by software that uses them.

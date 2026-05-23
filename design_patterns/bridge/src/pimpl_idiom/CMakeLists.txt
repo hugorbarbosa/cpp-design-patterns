@@ -1,14 +1,11 @@
-project(pimpl_idiom)
+set(target_name "pimpl_idiom")
+add_library(${target_name} STATIC)
+add_library(${DESIGNPAT_PROJECT_NAME}::${target_name} ALIAS ${target_name})
 
-add_library(${PROJECT_NAME} STATIC
-    PimplIdiomExample.cpp
-)
-add_library(${CPPDPAT_PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
-
-target_include_directories(${PROJECT_NAME}
-    PUBLIC .
+target_sources(
+    ${target_name}
+    PRIVATE pimpl_idiom_example.cpp
+    PUBLIC FILE_SET HEADERS
 )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::compile_options
-)
+target_link_libraries(${target_name} PRIVATE ${DESIGNPAT_PROJECT_NAME}::compile_options)

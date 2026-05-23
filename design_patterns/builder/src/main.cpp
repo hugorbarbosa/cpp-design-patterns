@@ -3,8 +3,8 @@
  * @copyright Copyright (c) 2023.
  */
 
-#include <ConcreteProductBuilder.h>
-#include <Director.h>
+#include <concrete_product_builder.hpp>
+#include <director.hpp>
 #include <iostream>
 
 /**
@@ -14,13 +14,14 @@
  */
 int main()
 {
-    std::cout << "== Builder ====" << std::endl;
+    std::cout << "== Builder ====\n";
 
-    using namespace cppDesignPatterns::builder;
+    using cpp_design_patterns::builder::ConcreteProductBuilder;
+    using cpp_design_patterns::builder::Director;
 
     Director director(std::make_unique<ConcreteProductBuilder>());
     auto product = director.construct();
-    std::cout << "Product info: " << product.getInfo() << std::endl;
+    std::cout << "Product info: " << product.get_info() << "\n";
 
     return EXIT_SUCCESS;
 }

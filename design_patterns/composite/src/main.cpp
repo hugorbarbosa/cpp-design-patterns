@@ -4,9 +4,9 @@
  */
 
 #include <cassert>
-#include <Composite.h>
+#include <composite.hpp>
 #include <iostream>
-#include <Leaf.h>
+#include <leaf.hpp>
 
 /**
  * @brief Main function.
@@ -15,45 +15,48 @@
  */
 int main()
 {
-    std::cout << "== Composite ====" << std::endl;
+    std::cout << "== Composite ====\n";
 
-    using namespace cppDesignPatterns::composite;
+    using cpp_design_patterns::composite::Component;
+    using cpp_design_patterns::composite::Composite;
+    using cpp_design_patterns::composite::Leaf;
 
     // Note that the client code does not differentiate the objects in the component.
-    const auto clientCode = [](const std::unique_ptr<IComponent>& component) { component->operation(); };
+    const auto client_code
+        = [](const std::unique_ptr<Component>& component) { component->operation(); };
 
     // Leafs.
-    std::unique_ptr<IComponent> leaf1 = std::make_unique<Leaf>(1);
-    std::unique_ptr<IComponent> leaf2 = std::make_unique<Leaf>(2);
-    std::unique_ptr<IComponent> leaf3 = std::make_unique<Leaf>(3);
+    std::unique_ptr<Component> leaf1{std::make_unique<Leaf>(1)};
+    std::unique_ptr<Component> leaf2{std::make_unique<Leaf>(2)};
+    std::unique_ptr<Component> leaf3{std::make_unique<Leaf>(3)};
 
     // Composite with leafs.
-    std::unique_ptr<IComponent> composite1 = std::make_unique<Composite>();
+    std::unique_ptr<Component> composite1{std::make_unique<Composite>()};
     composite1->add(std::move(leaf1));
     composite1->add(std::move(leaf2));
 
-    std::cout << "- Composite with leafs" << std::endl;
-    clientCode(composite1);
+    std::cout << "- Composite with leafs\n";
+    client_code(composite1);
 
     // Composite with a composite and a leaf.
-    const std::unique_ptr<IComponent> composite2 = std::make_unique<Composite>();
+    const std::unique_ptr<Component> composite2{std::make_unique<Composite>()};
     composite2->add(std::move(composite1));
     composite2->add(std::move(leaf3));
 
-    std::cout << "- Composite with a composite and a leaf" << std::endl;
-    clientCode(composite2);
+    std::cout << "- Composite with a composite and a leaf\n";
+    client_code(composite2);
 
     // Remove leaf 3 from the composite.
     constexpr auto index = 1;
-    const auto leaf = composite2->getChild(index);
+    const auto leaf = composite2->get_child(index);
     composite2->remove(index);
 
-    std::cout << "- Operation from the leaf that was removed from the composite" << std::endl;
+    std::cout << "- Operation from the leaf that was removed from the composite\n";
     assert(leaf != nullptr);
     leaf->operation();
 
-    std::cout << "- Composite after removing leaf 3" << std::endl;
-    clientCode(composite2);
+    std::cout << "- Composite after removing leaf 3\n";
+    client_code(composite2);
 
     return EXIT_SUCCESS;
 }

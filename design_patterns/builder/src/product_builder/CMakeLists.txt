@@ -1,16 +1,11 @@
-project(product_builder)
+set(target_name "product_builder")
+add_library(${target_name} STATIC)
+add_library(${DESIGNPAT_PROJECT_NAME}::${target_name} ALIAS ${target_name})
 
-add_library(${PROJECT_NAME} STATIC
-    Product.cpp
-    ConcreteProductBuilder.cpp
-    Director.cpp
-)
-add_library(${CPPDPAT_PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
-
-target_include_directories(${PROJECT_NAME}
-    PUBLIC .
+target_sources(
+    ${target_name}
+    PRIVATE product.cpp concrete_product_builder.cpp director.cpp
+    PUBLIC FILE_SET HEADERS
 )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::compile_options
-)
+target_link_libraries(${target_name} PRIVATE ${DESIGNPAT_PROJECT_NAME}::compile_options)

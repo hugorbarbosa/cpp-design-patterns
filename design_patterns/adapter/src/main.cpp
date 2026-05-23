@@ -3,13 +3,13 @@
  * @copyright Copyright (c) 2024.
  */
 
-#include <Adaptee.h>
-#include <ClassAdapter.h>
+#include <adaptee.hpp>
+#include <class_adapter.hpp>
 #include <iostream>
-#include <ITarget.h>
-#include <ObjectAdapter.h>
+#include <object_adapter.hpp>
+#include <target.hpp>
 
-using namespace cppDesignPatterns::adapter;
+using cpp_design_patterns::adapter::Target;
 
 /**
  * @brief Example of client code.
@@ -18,32 +18,37 @@ using namespace cppDesignPatterns::adapter;
  *
  * @param target Target interface.
  */
-void clientCode(std::unique_ptr<ITarget> target)
+void client_code(std::unique_ptr<Target> target)
 {
-    std::cout << "Target operation: " << target->operation() << std::endl;
+    std::cout << "Target operation: " << target->operation() << "\n";
 }
 
 /**
  * @brief Example of object adapter code.
  */
-void objectAdapter()
+void object_adapter()
 {
-    std::cout << "== Object Adapter ====" << std::endl;
+    std::cout << "== Object Adapter ====\n";
+
+    using cpp_design_patterns::adapter::Adaptee;
+    using cpp_design_patterns::adapter::ObjectAdapter;
 
     auto adaptee = std::make_unique<Adaptee>();
-    std::unique_ptr<ITarget> target = std::make_unique<ObjectAdapter>(std::move(adaptee));
-    clientCode(std::move(target));
+    std::unique_ptr<Target> target = std::make_unique<ObjectAdapter>(std::move(adaptee));
+    client_code(std::move(target));
 }
 
 /**
  * @brief Example of class adapter code.
  */
-void classAdapter()
+void class_adapter()
 {
-    std::cout << "== Class Adapter ====" << std::endl;
+    std::cout << "== Class Adapter ====\n";
 
-    std::unique_ptr<ITarget> target = std::make_unique<ClassAdapter>();
-    clientCode(std::move(target));
+    using cpp_design_patterns::adapter::ClassAdapter;
+
+    std::unique_ptr<Target> target = std::make_unique<ClassAdapter>();
+    client_code(std::move(target));
 }
 
 /**
@@ -53,8 +58,8 @@ void classAdapter()
  */
 int main()
 {
-    objectAdapter();
-    classAdapter();
+    object_adapter();
+    class_adapter();
 
     return EXIT_SUCCESS;
 }

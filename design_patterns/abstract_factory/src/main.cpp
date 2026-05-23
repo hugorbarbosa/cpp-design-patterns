@@ -3,8 +3,8 @@
  * @copyright Copyright (c) 2024.
  */
 
-#include <ConcreteFactory1.h>
-#include <ConcreteFactory2.h>
+#include <concrete_factory1.hpp>
+#include <concrete_factory2.hpp>
 #include <iostream>
 
 /**
@@ -14,30 +14,32 @@
  */
 int main()
 {
-    std::cout << "== Abstract Factory ====" << std::endl;
+    std::cout << "== Abstract Factory ====\n";
 
-    using namespace cppDesignPatterns::abstractFactory;
+    using cpp_design_patterns::abstract_factory::AbstractFactory;
+    using cpp_design_patterns::abstract_factory::ConcreteFactory1;
+    using cpp_design_patterns::abstract_factory::ConcreteFactory2;
 
     // Note that the client code does not know the concrete products.
 
     // Helper function to create the product and print its information.
-    auto createProducts = [](const IAbstractFactory& factory) {
-        const auto productA = factory.createProductA();
-        std::cout << "Product A info: " << productA->getInfo() << std::endl;
+    const auto create_products = [](const AbstractFactory& factory) {
+        const auto product_a = factory.create_product_a();
+        std::cout << "Product A info: " << product_a->get_info() << "\n";
 
-        const auto productB = factory.createProductB();
-        std::cout << "Product B info: " << productB->getInfo() << std::endl;
+        const auto product_b = factory.create_product_b();
+        std::cout << "Product B info: " << product_b->get_info() << "\n";
     };
 
     // Factory 1.
-    std::cout << "Using factory 1" << std::endl;
-    ConcreteFactory1 concreteFactory1;
-    createProducts(concreteFactory1);
+    std::cout << "Using factory 1\n";
+    const ConcreteFactory1 concrete_factory1;
+    create_products(concrete_factory1);
 
     // Factory 2.
-    std::cout << "Using factory 2" << std::endl;
-    ConcreteFactory2 concreteFactory2;
-    createProducts(concreteFactory2);
+    std::cout << "Using factory 2\n";
+    const ConcreteFactory2 concrete_factory2;
+    create_products(concrete_factory2);
 
     return EXIT_SUCCESS;
 }

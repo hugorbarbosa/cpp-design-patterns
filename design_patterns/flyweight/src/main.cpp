@@ -12,9 +12,9 @@
  */
 int main()
 {
-    std::cout << "== Flyweight ====" << std::endl;
+    std::cout << "== Flyweight ====\n";
 
-    // TODO: Complete the code.
+    // TODO(HB): Complete the code.
 
     return EXIT_SUCCESS;
 }

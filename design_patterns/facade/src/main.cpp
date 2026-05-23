@@ -3,7 +3,7 @@
  * @copyright Copyright (c) 2024.
  */
 
-#include <Facade.h>
+#include <facade.hpp>
 #include <iostream>
 
 /**
@@ -13,14 +13,13 @@
  */
 int main()
 {
-    std::cout << "== Facade ====" << std::endl;
+    std::cout << "== Facade ====\n";
 
-    using namespace cppDesignPatterns::facade;
-
-    // Note that the client code only knows the Facade object (subsystems are encapsulated in the Facade).
-    Facade facade{};
-    std::cout << "Operation 1 from Facade: " << facade.operation1() << std::endl;
-    std::cout << "Operation 2 from Facade: " << facade.operation2() << std::endl;
+    // Note that the client code only knows the Facade object (subsystems are encapsulated in the
+    // Facade).
+    cpp_design_patterns::facade::Facade facade;
+    std::cout << "Operation 1 from Facade: " << facade.operation1() << "\n";
+    std::cout << "Operation 2 from Facade: " << facade.operation2() << "\n";
 
     return EXIT_SUCCESS;
 }

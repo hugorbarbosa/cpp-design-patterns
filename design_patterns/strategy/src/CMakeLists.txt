@@ -1,18 +1,18 @@
-project(strategy)
-
 add_subdirectory(dynamic_base)
 add_subdirectory(dynamic_function)
 add_subdirectory(static_template)
 
-add_executable(${PROJECT_NAME}
-    main.cpp
+set(target_name "strategy")
+add_executable(${target_name})
+
+target_sources(${target_name} PRIVATE main.cpp)
+
+target_link_libraries(
+    ${target_name}
+    PRIVATE ${DESIGNPAT_PROJECT_NAME}::compile_options
+            ${DESIGNPAT_PROJECT_NAME}::dynamic_strategy_base
+            ${DESIGNPAT_PROJECT_NAME}::dynamic_strategy_function
+            ${DESIGNPAT_PROJECT_NAME}::static_strategy
 )
 
-target_link_libraries(${PROJECT_NAME}
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::compile_options
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::dynamic_strategy_base
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::dynamic_strategy_function
-    PRIVATE ${CPPDPAT_PROJECT_NAME}::static_strategy
-)
-
-set_target_binary_output_directory(${PROJECT_NAME})
+set_target_binary_output_directory(${target_name})
