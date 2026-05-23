@@ -110,9 +110,9 @@ void stl_strategy()
 
     // Strategy is provided by the lambda function
     const std::vector<int> vec{1, 2, 3, 4};
-    std::cout << "vec = { ";
-    std::for_each(vec.cbegin(), vec.cend(), [](const auto& elem) { std::cout << elem << " "; });
-    std::cout << "}\n";
+    std::for_each(vec.cbegin(), vec.cend(), [](const auto& /*elem*/) {
+        std::cout << "Strategy provided here for each element\n";
+    });
 }
 
 /**
