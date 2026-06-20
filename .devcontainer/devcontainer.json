@@ -1,0 +1,28 @@
+{
+    "name": "C++",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "ms-vscode.cpp-devtools",
+                "ms-vscode.cmake-tools",
+                "streetsidesoftware.code-spell-checker",
+                "eamodio.gitlens",
+                "ms-python.python"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "cmake.useCMakePresets": "always",
+                "cSpell.enabled": true,
+                "cSpell.enabledFileTypes": {
+                    "*": true
+                }
+            }
+        }
+    }
+}
